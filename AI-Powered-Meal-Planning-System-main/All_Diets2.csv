@@ -1,0 +1,301 @@
+name,Cuisine_type,protein,carbohydrate,total_fat,Estimated_Weight(g),calories
+Dal Tadka,North Indian,11,30,7,200,250
+Paneer Butter Masala,North Indian,15,25,20,250,350
+Masoor Dal,North Indian,14,40,5,200,280
+Palak Paneer,North Indian,13,15,18,220,290
+Aloo Paratha,North Indian,10,45,12,150,330
+Rajma Chawal,North Indian,12,60,8,300,400
+Chole Bhature,North Indian,14,65,22,350,550
+Baingan Bharta,North Indian,4,18,10,200,190
+Samosa,North Indian,6,35,15,100,300
+Butter Chicken,North Indian,25,20,25,300,450
+Hyderabadi Biryani,South Indian,22,60,12,350,500
+Idli,South Indian,2,40,1,100,150
+Dosa,South Indian,4,45,8,120,200
+Uttapam,South Indian,5,50,6,180,220
+Sambar,South Indian,6,20,2,200,120
+Rasam,South Indian,3,15,1,150,80
+Vada,South Indian,8,30,10,120,280
+Pesarattu,South Indian,10,35,5,180,250
+Chettinad Chicken,South Indian,28,15,18,250,400
+Appam,South Indian,3,40,2,120,180
+Misal Pav,Maharashtrian,12,50,10,250,350
+Pav Bhaji,Maharashtrian,10,55,15,300,400
+Vada Pav,Maharashtrian,8,40,12,200,320
+Puran Poli,Maharashtrian,6,65,8,150,300
+Bhel Puri,Maharashtrian,5,50,3,180,200
+Dhokla,Gujarati,8,40,5,150,250
+Thepla,Gujarati,9,45,7,160,280
+Undhiyu,Gujarati,7,35,10,200,300
+Sev Usal,Gujarati,9,50,12,220,350
+Khandvi,Gujarati,6,30,8,150,200
+Litti Chokha,Bihari,12,45,15,250,400
+Ghugni,Bihari,10,40,6,200,280
+Sattu Paratha,Bihari,14,50,10,180,350
+Chhena Poda,Odia,8,55,15,150,320
+Machha Besara,Odia,22,10,12,220,280
+Shukto,Bengali,5,30,7,180,220
+Alu Posto,Bengali,4,25,12,150,280
+Macher Jhol,Bengali,20,10,10,250,300
+Litti Chokha,Bihari,12,50,8,200,350
+Dhuska,Jharkhandi,10,40,12,180,300
+Chilka Roti,Jharkhandi,8,45,5,160,250
+Momox,North-Eastern,6,40,8,150,220
+Thukpa,North-Eastern,15,55,10,250,350
+Pakhala Bhata,Odia,4,60,2,300,280
+Pav Bhaji (Special),Maharashtrian,12,52,13,319,372
+Vada (Special),South Indian,9,35,10,146,261
+Rajma Chawal (Special),North Indian,14,61,6,292,371
+Pav Bhaji (Special),Maharashtrian,8,54,12,285,376
+Pav Bhaji (Special),Maharashtrian,11,59,17,328,450
+Chhena Poda (Special),Odia,8,53,15,129,277
+Shukto (Special),Bengali,6,34,4,194,206
+Vada (Special),South Indian,10,27,8,124,243
+Undhiyu (Special),Gujarati,9,39,10,225,258
+Litti Chokha (Special),Bihari,11,49,11,212,395
+Pav Bhaji (Special) (Special),Maharashtrian,6,52,15,303,369
+Palak Paneer (Special),North Indian,11,11,21,207,250
+Vada Pav (Special),Maharashtrian,8,35,13,208,344
+Chettinad Chicken (Special),South Indian,27,19,18,233,399
+Sambar (Special),South Indian,6,18,1,174,165
+Pesarattu (Special),South Indian,11,36,4,210,252
+Dosa (Special),South Indian,4,42,6,113,186
+Paneer Butter Masala (Special),North Indian,17,23,22,261,314
+Rasam (Special),South Indian,2,11,4,173,38
+Pav Bhaji (Special) (Special) (Special),Maharashtrian,8,48,15,279,359
+Dosa (Special),South Indian,4,43,6,99,227
+Shukto (Special) (Special),Bengali,7,30,7,192,182
+Chhena Poda (Special) (Special),Odia,8,56,18,119,253
+Appam (Special),South Indian,1,35,3,115,225
+Puran Poli (Special),Maharashtrian,4,68,7,127,267
+Hyderabadi Biryani (Special),South Indian,21,61,15,357,493
+Bhel Puri (Special),Maharashtrian,6,49,3,192,160
+Chhena Poda (Special) (Special),Odia,6,54,17,113,251
+Pav Bhaji (Special) (Special),Maharashtrian,14,55,12,339,376
+Vada (Special) (Special),South Indian,11,30,11,126,297
+Dosa (Special) (Special),South Indian,3,42,9,97,215
+Vada (Special),South Indian,6,32,9,111,278
+Pav Bhaji (Special) (Special) (Special),Maharashtrian,13,52,9,317,418
+Rasam (Special),South Indian,1,13,0,173,52
+Dhokla (Special),Gujarati,10,42,4,155,287
+Butter Chicken (Special),North Indian,25,15,27,318,465
+Dosa (Special),South Indian,2,42,8,96,188
+Shukto (Special),Bengali,3,29,8,200,191
+Uttapam (Special),South Indian,7,47,4,200,239
+Chettinad Chicken (Special),South Indian,27,19,16,229,354
+Rajma Chawal (Special),North Indian,13,60,9,309,400
+Chhena Poda (Special) (Special),Odia,10,52,18,105,264
+Idli (Special),South Indian,3,42,2,114,130
+Chhena Poda (Special) (Special) (Special),Odia,7,57,16,148,258
+Dhuska (Special),Jharkhandi,9,37,9,175,301
+Rajma Chawal (Special) (Special),North Indian,14,58,3,314,351
+Thepla (Special),Gujarati,8,45,4,189,320
+Appam (Special) (Special),South Indian,2,31,3,89,275
+Pakhala Bhata (Special),Odia,4,63,3,285,266
+Pav Bhaji (Special) (Special),Maharashtrian,13,52,10,323,370
+Vada Pav (Special),Maharashtrian,10,44,13,174,361
+Pav Bhaji (Special) (Special) (Special),Maharashtrian,13,48,8,329,329
+Hyderabadi Biryani (Special) (Special),South Indian,22,57,15,333,503
+Thepla (Special) (Special),Gujarati,7,49,1,205,312
+Shukto (Special) (Special) (Special),Bengali,6,30,6,220,216
+Paneer Butter Masala (Special),North Indian,13,28,21,276,326
+Momox (Special),North-Eastern,7,44,5,176,183
+Bhel Puri (Special) (Special),Maharashtrian,7,49,6,176,209
+Chhena Poda (Special) (Special) (Special),Odia,6,56,18,89,209
+Pav Bhaji (Special) (Special) (Special),Maharashtrian,13,55,12,350,362
+Momox (Special) (Special),North-Eastern,8,49,6,187,205
+Pav Bhaji (Special) (Special) (Special) (Special),Maharashtrian,12,49,8,330,314
+Misal Pav (Special),Maharashtrian,14,50,11,268,367
+Puran Poli (Special),Maharashtrian,6,70,6,163,349
+Appam (Special) (Special),South Indian,1,31,2,132,218
+Rajma Chawal (Special),North Indian,12,59,10,270,357
+Vada (Special) (Special) (Special),South Indian,11,31,8,132,300
+Puran Poli (Special) (Special),Maharashtrian,7,70,6,154,317
+Paneer Butter Masala (Special),North Indian,16,27,22,258,388
+Momox (Special) (Special) (Special),North-Eastern,10,54,7,192,211
+Rajma Chawal (Special),North Indian,12,64,7,305,438
+Bhel Puri (Special) (Special),Maharashtrian,8,44,4,213,181
+Dosa (Special) (Special),South Indian,0,43,6,82,156
+Undhiyu (Special) (Special),Gujarati,9,34,10,223,241
+Appam (Special) (Special),South Indian,3,39,0,137,229
+Misal Pav (Special),Maharashtrian,12,54,10,230,350
+Uttapam (Special) (Special),South Indian,7,51,2,230,256
+Puran Poli (Special) (Special),Maharashtrian,8,73,8,136,310
+Chole Bhature (Special),North Indian,16,61,20,361,577
+Pav Bhaji (Special),Maharashtrian,9,51,17,285,394
+Vada (Special),South Indian,6,26,12,121,279
+Bhel Puri (Special) (Special) (Special),Maharashtrian,6,47,7,191,218
+Vada Pav (Special) (Special),Maharashtrian,10,34,11,221,393
+Vada Pav (Special),Maharashtrian,9,37,15,214,343
+Thukpa (Special),North-Eastern,16,56,9,243,304
+Bhel Puri (Special) (Special) (Special) (Special),Maharashtrian,5,46,6,202,236
+Misal Pav (Special) (Special),Maharashtrian,11,54,8,260,352
+Chole Bhature (Special) (Special),North Indian,17,57,22,333,580
+Vada (Special) (Special),South Indian,6,33,7,110,288
+Sambar (Special) (Special),South Indian,8,16,3,157,150
+Masoor Dal (Special),North Indian,14,41,8,200,303
+Appam (Special) (Special),South Indian,-1,34,5,132,232
+Dosa (Special) (Special) (Special),South Indian,1,38,8,70,210
+Butter Chicken (Special) (Special),North Indian,25,15,28,320,459
+Hyderabadi Biryani (Special) (Special),South Indian,20,61,15,385,529
+Sev Usal (Special),Gujarati,9,47,11,244,395
+Vada Pav (Special) (Special),Maharashtrian,10,31,11,180,329
+Pesarattu (Special) (Special),South Indian,10,32,6,193,226
+Undhiyu (Special),Gujarati,8,37,10,212,314
+Bhel Puri (Special) (Special) (Special),Maharashtrian,6,47,9,198,244
+Pav Bhaji (Special) (Special) (Special),Maharashtrian,11,48,7,333,360
+Hyderabadi Biryani (Special) (Special) (Special),South Indian,24,61,18,321,464
+Thepla (Special),Gujarati,8,47,9,151,243
+Butter Chicken (Special),North Indian,25,17,27,328,496
+Pav Bhaji (Special) (Special),Maharashtrian,9,56,13,303,418
+Rajma Chawal (Special) (Special),North Indian,14,61,9,326,389
+Thepla (Special),Gujarati,8,47,8,156,313
+Thepla (Special) (Special) (Special),Gujarati,5,44,0,192,290
+Bhel Puri (Special) (Special),Maharashtrian,8,52,1,186,111
+Vada (Special) (Special),South Indian,9,22,9,142,219
+Vada (Special) (Special),South Indian,8,29,10,132,311
+Bhel Puri (Special) (Special) (Special) (Special) (Special),Maharashtrian,6,44,6,180,246
+Momox (Special) (Special),North-Eastern,7,44,4,185,163
+Thepla (Special) (Special) (Special) (Special),Gujarati,7,47,3,169,274
+Vada (Special) (Special),South Indian,8,35,7,93,277
+Butter Chicken (Special) (Special) (Special),North Indian,24,13,27,322,486
+Pav Bhaji (Special) (Special) (Special) (Special),Maharashtrian,11,50,6,308,348
+Pav Bhaji (Special),Maharashtrian,9,57,18,285,371
+Butter Chicken (Special) (Special),North Indian,26,13,28,329,483
+Puran Poli (Special),Maharashtrian,7,63,9,180,251
+Bhel Puri (Special) (Special),Maharashtrian,4,51,3,181,150
+Vada Pav (Special) (Special),Maharashtrian,8,37,15,200,307
+Paneer Butter Masala (Special) (Special),North Indian,17,26,22,252,419
+Vada (Special) (Special),South Indian,4,22,14,132,298
+Paneer Butter Masala (Special),North Indian,16,29,17,244,301
+Pav Bhaji (Special) (Special) (Special) (Special),Maharashtrian,13,55,9,323,403
+Appam (Special) (Special) (Special),South Indian,3,29,5,133,246
+Vada (Special) (Special) (Special),South Indian,8,35,5,119,316
+Butter Chicken (Special) (Special),North Indian,27,22,26,302,470
+Chole Bhature (Special) (Special) (Special),North Indian,18,56,24,342,582
+Pav Bhaji (Special) (Special) (Special),Maharashtrian,16,54,11,350,424
+Shukto (Special) (Special) (Special),Bengali,8,35,9,173,218
+Paneer Butter Masala (Special) (Special) (Special),North Indian,15,24,20,282,382
+Vada (Special),South Indian,6,28,9,95,300
+Butter Chicken (Special) (Special) (Special),North Indian,27,27,27,304,520
+Shukto (Special) (Special),Bengali,2,24,7,213,201
+Bhel Puri (Special) (Special) (Special) (Special),Maharashtrian,8,42,6,180,189
+Rajma Chawal (Special) (Special) (Special),North Indian,16,54,4,309,339
+Vada (Special) (Special),South Indian,7,22,10,142,301
+Pav Bhaji (Special),Maharashtrian,8,59,16,288,423
+Litti Chokha (Special),Bihari,11,53,7,208,302
+Rajma Chawal (Special) (Special) (Special) (Special),North Indian,17,49,7,320,328
+Litti Chokha (Special) (Special),Bihari,11,52,10,185,383
+Appam (Special) (Special) (Special),South Indian,3,29,2,70,288
+Aloo Paratha (Special),North Indian,10,42,10,121,348
+Vada Pav (Special),Maharashtrian,9,40,14,215,317
+Momox (Special) (Special) (Special),North-Eastern,6,54,6,181,157
+Dosa (Special) (Special) (Special),South Indian,0,41,6,107,193
+Pav Bhaji (Special) (Special) (Special) (Special),Maharashtrian,14,52,11,339,389
+Hyderabadi Biryani (Special),South Indian,24,64,14,377,515
+Rajma Chawal (Special) (Special),North Indian,13,57,8,314,377
+Vada (Special),South Indian,8,30,13,125,267
+Macher Jhol (Special),Bengali,18,15,11,238,286
+Thepla (Special) (Special),Gujarati,10,42,5,173,351
+Pav Bhaji (Special) (Special),Maharashtrian,7,61,21,278,416
+Litti Chokha (Special),Bihari,10,51,8,230,379
+Bhel Puri (Special) (Special) (Special) (Special) (Special),Maharashtrian,8,45,4,175,226
+Shukto (Special),Bengali,6,31,8,210,254
+Vada (Special) (Special) (Special),South Indian,11,33,13,115,257
+Khandvi (Special),Gujarati,6,33,6,156,221
+Butter Chicken (Special) (Special) (Special),North Indian,24,16,30,321,504
+Puran Poli (Special) (Special),Maharashtrian,4,64,4,149,303
+Bhel Puri (Special) (Special) (Special) (Special) (Special) (Special),Maharashtrian,10,46,4,158,208
+Vada Pav (Special) (Special),Maharashtrian,8,40,10,193,356
+Paneer Butter Masala (Special) (Special),North Indian,17,24,14,227,333
+Litti Chokha (Special),Bihari,14,43,17,227,425
+Bhel Puri (Special) (Special) (Special) (Special) (Special),Maharashtrian,5,49,9,224,249
+Appam (Special) (Special),South Indian,3,37,2,97,264
+Baingan Bharta (Special),North Indian,5,22,8,180,195
+Appam (Special) (Special) (Special),South Indian,0,27,4,96,268
+Vada Pav (Special) (Special) (Special),Maharashtrian,9,35,11,246,440
+Pav Bhaji (Special) (Special),Maharashtrian,9,56,17,278,363
+Pav Bhaji (Special) (Special) (Special),Maharashtrian,14,53,15,350,393
+Paneer Butter Masala (Special),North Indian,13,26,17,259,369
+Chhena Poda (Special) (Special) (Special) (Special),Odia,5,52,20,105,183
+Pav Bhaji (Special) (Special) (Special) (Special) (Special),Maharashtrian,13,50,10,344,374
+Vada (Special) (Special) (Special) (Special),South Indian,12,37,12,132,249
+Dosa (Special) (Special),South Indian,6,44,4,107,197
+Rasam (Special),South Indian,2,11,3,173,64
+Chole Bhature (Special) (Special),North Indian,16,56,22,387,617
+Shukto (Special) (Special),Bengali,7,31,6,206,181
+Chettinad Chicken (Special) (Special),South Indian,27,17,17,210,391
+Litti Chokha (Special),Bihari,12,42,14,272,399
+Litti Chokha (Special) (Special),Bihari,9,54,6,183,326
+Chole Bhature (Special) (Special) (Special),North Indian,19,52,24,315,617
+Vada (Special) (Special) (Special) (Special),South Indian,11,28,11,118,295
+Pav Bhaji (Special) (Special) (Special) (Special) (Special),Maharashtrian,13,45,4,294,336
+Undhiyu (Special) (Special),Gujarati,7,41,11,206,310
+Paneer Butter Masala (Special),North Indian,14,28,22,268,369
+Dhuska (Special),Jharkhandi,8,39,10,194,331
+Litti Chokha (Special) (Special) (Special),Bihari,9,49,3,170,367
+Puran Poli (Special) (Special),Maharashtrian,9,60,7,192,241
+Bhel Puri (Special) (Special) (Special),Maharashtrian,9,48,-1,162,102
+Rajma Chawal (Special),North Indian,10,57,7,290,391
+Chole Bhature (Special) (Special),North Indian,16,60,17,345,612
+Dosa (Special) (Special) (Special) (Special),South Indian,2,39,6,101,242
+Chole Bhature (Special) (Special) (Special),North Indian,14,56,20,386,585
+Bhel Puri (Special) (Special) (Special),Maharashtrian,6,48,6,208,139
+Misal Pav (Special) (Special),Maharashtrian,12,50,14,298,376
+Khandvi (Special),Gujarati,4,26,8,153,245
+Thepla (Special) (Special),Gujarati,9,50,10,135,258
+Pakhala Bhata (Special) (Special),Odia,4,68,5,301,283
+Dosa (Special) (Special) (Special) (Special),South Indian,1,36,7,48,257
+Momox (Special),North-Eastern,7,35,6,124,270
+Rajma Chawal (Special) (Special) (Special),North Indian,13,53,5,312,363
+Pav Bhaji (Special) (Special) (Special) (Special) (Special) (Special),Maharashtrian,12,48,6,273,296
+Vada Pav (Special) (Special),Maharashtrian,12,47,10,145,351
+Undhiyu (Special) (Special) (Special),Gujarati,8,45,8,220,284
+Pakhala Bhata (Special),Odia,2,64,2,316,284
+Pav Bhaji (Special) (Special) (Special) (Special) (Special) (Special),Maharashtrian,11,47,12,347,371
+Pav Bhaji (Special) (Special) (Special) (Special) (Special),Maharashtrian,12,54,12,349,352
+Chhena Poda (Special) (Special) (Special),Odia,7,57,19,132,231
+Puran Poli (Special) (Special) (Special),Maharashtrian,5,69,7,128,290
+Vada (Special) (Special),South Indian,7,27,9,123,315
+Vada Pav (Special) (Special) (Special),Maharashtrian,8,32,18,183,309
+Butter Chicken (Special) (Special) (Special) (Special),North Indian,24,18,32,316,474
+Hyderabadi Biryani (Special) (Special) (Special),South Indian,19,65,14,356,482
+Pav Bhaji (Special) (Special),Maharashtrian,11,47,17,279,348
+Puran Poli (Special),Maharashtrian,7,68,8,130,274
+Paneer Butter Masala (Special),North Indian,16,24,23,258,316
+Chhena Poda (Special) (Special) (Special),Odia,10,52,18,130,235
+Butter Chicken (Special) (Special) (Special) (Special) (Special),North Indian,25,23,35,344,430
+Thepla (Special) (Special) (Special),Gujarati,12,47,3,199,356
+Pakhala Bhata (Special) (Special) (Special),Odia,6,72,6,325,249
+Misal Pav (Special) (Special),Maharashtrian,11,52,8,236,307
+Uttapam (Special) (Special),South Indian,6,52,7,173,265
+Masoor Dal (Special) (Special),North Indian,12,36,7,182,296
+Chhena Poda (Special) (Special) (Special) (Special),Odia,6,59,13,177,293
+Appam (Special) (Special) (Special) (Special),South Indian,1,30,3,125,208
+Chole Bhature (Special) (Special) (Special) (Special),North Indian,15,58,21,369,597
+Pav Bhaji (Special) (Special) (Special) (Special),Maharashtrian,13,48,8,342,374
+Vada (Special) (Special) (Special) (Special),South Indian,10,37,15,107,298
+Paneer Butter Masala (Special),North Indian,16,23,21,269,307
+Pav Bhaji (Special),Maharashtrian,11,59,16,327,395
+Pav Bhaji (Special) (Special),Maharashtrian,10,57,17,325,434
+Hyderabadi Biryani (Special) (Special) (Special),South Indian,19,65,16,368,509
+Shukto (Special) (Special) (Special),Bengali,7,29,3,179,219
+Appam (Special) (Special),South Indian,3,36,1,103,202
+Vada (Special) (Special),South Indian,10,37,7,125,277
+Pav Bhaji (Special) (Special) (Special) (Special),Maharashtrian,11,54,8,317,433
+Butter Chicken (Special) (Special),North Indian,26,19,27,297,468
+Uttapam (Special) (Special) (Special),South Indian,9,47,0,259,246
+Dosa (Special) (Special) (Special) (Special),South Indian,0,40,8,133,181
+Dosa (Special) (Special) (Special),South Indian,6,42,3,104,210
+Paneer Butter Masala (Special) (Special),North Indian,13,33,20,252,343
+Paneer Butter Masala (Special) (Special),North Indian,14,22,24,284,363
+Sambar (Special) (Special) (Special),South Indian,10,16,0,170,106
+Hyderabadi Biryani (Special) (Special) (Special) (Special),South Indian,19,65,18,364,522
+Shukto (Special),Bengali,6,25,8,160,174
+Rasam (Special) (Special),South Indian,4,7,6,173,25
+Puran Poli (Special) (Special),Maharashtrian,3,72,9,137,292
+Chhena Poda (Special) (Special) (Special) (Special) (Special),Odia,4,54,20,120,142
+Pav Bhaji (Special) (Special) (Special) (Special) (Special) (Special),Maharashtrian,11,55,9,350,402
+Thukpa (Special),North-Eastern,15,59,7,276,310
+Thukpa (Special),North-Eastern,15,56,7,265,387
+Shukto (Special) (Special) (Special),Bengali,5,28,8,163,156

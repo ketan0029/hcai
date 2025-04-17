@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Diet Planner with AI Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('Background.jpeg');
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .voice-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .voice-icon {
+            width: 80px;
+            height: 80px;
+            background: #007BFF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .instruction {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Accessible Diet Planner with AI Chatbot</h1>
+        <p>Welcome! Fill out the form below or use voice commands.</p>
+        
+        <form id="diet-form">
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" required>
+            
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" required>
+            
+            <label for="activity">Activity Level:</label>
+            <select id="activity" required>
+                <option value="sedentary">Sedentary</option>
+                <option value="light">Lightly Active</option>
+                <option value="moderate">Moderately Active</option>
+                <option value="very">Very Active</option>
+            </select>
+            
+            <label for="diet">Dietary Preference:</label>
+            <select id="diet" required>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="non-vegetarian">Non-Vegetarian</option>
+                <option value="vegan">Vegan</option>
+            </select>
+            
+            <button type="submit" class="btn" id="generate-plan">Generate Diet Plan</button>
+        </form>
+
+        <div class="voice-container">
+            <div class="voice-icon" onclick="toggleSpeechRecognition()">
+                🎤
+            </div>
+            <p class="instruction">Tap to use voice input</p>
+        </div>
+    </div>
+
+    <script>
+        let recognition;
+        let currentFieldIndex = 0;
+        const formFields = ["age", "gender", "weight", "height", "activity", "diet"];
+        
+        if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+            recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = "en-US";
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript.trim().toLowerCase();
+                console.log("Voice Input:", transcript);
+                processVoiceCommand(transcript);
+            };
+
+            recognition.onerror = (event) => {
+                console.error("Speech recognition error:", event.error);
+            };
+
+            recognition.onend = () => {
+                console.log("Speech recognition ended.");
+            };
+        } else {
+            alert("Speech Recognition is not supported in this browser.");
+        }
+
+        function toggleSpeechRecognition() {
+            if (recognition) {
+                recognition.start();
+                alert("Listening... Speak your command.");
+            }
+        }
+
+        function processVoiceCommand(command) {
+            if (command.includes("start form") || command.includes("begin form")) {
+                guideUserToFillForm();
+            } else if (command.includes("generate diet plan")) {
+                document.getElementById("diet-form").submit();
+            } else {
+                fillFormWithVoice(command);
+            }
+        }
+
+        function guideUserToFillForm() {
+            currentFieldIndex = 0;
+            askForField(formFields[currentFieldIndex]);
+        }
+
+        function askForField(field) {
+            let question = "";
+            switch (field) {
+                case "age":
+                    question = "Please say your age.";
+                    break;
+                case "gender":
+                    question = "Say your gender: Male, Female, or Other.";
+                    break;
+                case "weight":
+                    question = "Say your weight in kilograms.";
+                    break;
+                case "height":
+                    question = "Say your height in centimeters.";
+                    break;
+                case "activity":
+                    question = "Say your activity level: Sedentary, Lightly Active, Moderately Active, or Very Active.";
+                    break;
+                case "diet":
+                    question = "Say your dietary preference: Vegetarian, Non-Vegetarian, or Vegan.";
+                    break;
+            }
+            speak(question);
+            recognition.start();
+        }
+
+        function fillFormWithVoice(value) {
+            let field = formFields[currentFieldIndex];
+
+            if (["age", "weight", "height"].includes(field)) {
+                let number = parseInt(value, 10);
+                if (!isNaN(number)) {
+                    document.getElementById(field).value = number;
+                    speak(`You entered ${number}.`);
+                    moveToNextField();
+                } else {
+                    speak("Invalid input, please say a number.");
+                }
+            } else if (field === "gender" && ["male", "female", "other"].includes(value)) {
+                document.getElementById(field).value = value;
+                speak(`You selected ${value}.`);
+                moveToNextField();
+            } else if (field === "activity") {
+                let activityLevels = {
+                    "sedentary": "sedentary",
+                    "lightly active": "light",
+                    "moderately active": "moderate",
+                    "very active": "very"
+                };
+                let selected = activityLevels[value];
+                if (selected) {
+                    document.getElementById(field).value = selected;
+                    speak(`You selected ${value}.`);
+                    moveToNextField();
+                } else {
+                    speak("Please say sedentary, lightly active, moderately active, or very active.");
+                }
+            } else if (field === "diet" && ["vegetarian", "non-vegetarian", "vegan"].includes(value)) {
+                document.getElementById(field).value = value;
+                speak(`You selected ${value}.`);
+                moveToNextField();
+            }
+        }
+
+        function moveToNextField() {
+            currentFieldIndex++;
+            if (currentFieldIndex < formFields.length) {
+                askForField(formFields[currentFieldIndex]);
+            } else {
+                speak("All details filled. Say 'Generate Diet Plan' to submit.");
+            }
+        }
+
+        function speak(text) {
+            let utterance = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

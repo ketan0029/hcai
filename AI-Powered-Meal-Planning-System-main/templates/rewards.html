@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Meal Planner | Rewards</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #5B3407;
+      --secondary-color: #F8F1E5;
+      --accent-color: #E8C07D;
+      --text-dark: #333;
+      --text-light: #777;
+      --bronze: #CD7F32;
+      --silver: #C0C0C0;
+      --gold: #FFD700;
+      --platinum: #E5E4E2;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background-color: #f9f5f0;
+    }
+    
+    
+    header {
+      background-color: white;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .voice-control {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .voice-control:hover {
+      background-color: var(--accent-color);
+    }
+    
+    .voice-control.active {
+      background-color: #4CAF50;
+      animation: pulse 1.5s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+    }
+    
+    .voice-feedback {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 1000;
+    }
+    
+    .voice-feedback.active {
+      display: block;
+    }
+    
+    .voice-command {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    
+    .rewards-container {
+      max-width: 1200px;
+      margin:  2rem auto ;
+      padding: 0 2rem;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .stat-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .stat-card i {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .stat-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-card p {
+      color: var(--text-light);
+    }
+    
+    .streak-display {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 1rem 0;
+    }
+    
+    .progress-container {
+      width: 100%;
+      height: 10px;
+      background-color: #eee;
+      border-radius: 5px;
+      margin: 1rem 0;
+      overflow: hidden;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      border-radius: 5px;
+      transition: width 0.5s ease;
+    }
+    
+    .badges-section, .ranks-section {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .section-title i {
+      font-size: 1.8rem;
+    }
+    
+    .badges-grid, .ranks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .badge-card, .rank-card {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .badge-card {
+      background-color: var(--secondary-color);
+    }
+    
+    .badge-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .badge-icon {
+      width: 80px;
+      height: 80px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 2rem;
+      color: var(--primary-color);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    .fas{
+      font-size: 2.5rem;
+    }
+    .bx{
+      font-size: 2.5rem;
+    }
+    .badge-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .badge-card p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    
+    .earned .badge-icon {
+      background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+      color: white;
+    }
+    
+    .rank-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(135deg, #f5f5f5, white);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .rank-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background-color: var(--text-light);
+    }
+    
+    .rank-card.bronze::before {
+      background-color: var(--bronze);
+    }
+    
+    .rank-card.silver::before {
+      background-color: var(--silver);
+    }
+    
+    .rank-card.gold::before {
+      background-color: var(--gold);
+    }
+    
+    .rank-card.platinum::before {
+      background-color: var(--platinum);
+    }
+    
+    .rank-card.current {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .rank-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    
+    .bronze .rank-icon {
+      background-color: var(--bronze);
+      color: white;
+    }
+    
+    .silver .rank-icon {
+      background-color: var(--silver);
+      color: #333;
+    }
+    
+    .gold .rank-icon {
+      background-color: var(--gold);
+      color: #333;
+    }
+    
+    .platinum .rank-icon {
+      background-color: var(--platinum);
+      color: #333;
+    }
+    
+    .rank-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .rank-card p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    
+    .rank-progress {
+      width: 100%;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #ddd;
+    }
+    
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .badges-grid, .ranks-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        
+      }
+      
+      .page-header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .voice-control {
+        padding: 0.5rem;
+      }
+      
+      .voice-control span {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    
+    <nav>
+      <div class="logo">AI Meal Planner</div>
+      <div class="nav-links">
+        <a href="generate" class="nav-link" data-voice-command="generate plan">Generate Plan</a>
+        <a href="Find_Similar_Items" class="nav-link" data-voice-command="find similar items">Find Similar Items</a>
+        <a href="Choose_nutritional" class="nav-link" data-voice-command="nutritional needs">Nutritional Needs</a>
+        <a href="http://localhost:3000/" class="nav-link" data-voice-command="nutritional needs">Calorie Tracker</a>
+        <a href="rewards" class="nav-link active" data-voice-command="my rewards">My Rewards</a>
+    </div>
+      <div class="voice-control" id="voiceControl">
+        <i class='bx bx-microphone'></i>
+        <span>Voice Control</span>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="voice-feedback" id="voiceFeedback">
+    <p>Listening for commands...</p>
+    <p>Last command: <span class="voice-command" id="lastCommand"></span></p>
+  </div>
+  
+  <div class="rewards-container">
+    <div class="page-header">
+      <h1>Your Achievement Journey</h1>
+      <p>Track your progress, earn badges, and climb the ranks as you maintain healthy eating habits</p>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-card" data-voice-command="show streak">
+        <i class='bx bx-calendar-check'></i>
+        <h3>Current Streak</h3>
+        <div class="streak-display">7 days</div>
+        <p>Keep going! 3 more days for your next badge</p>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 70%"></div>
+        </div>
+      </div>
+      
+      <div class="stat-card" data-voice-command="show rank">
+        <i class='bx bx-trophy'></i>
+        <h3>Your Rank</h3>
+        <div class="streak-display" style="color: var(--bronze);">Bronze Chef</div>
+        <p>125 points to Silver Chef</p>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 45%"></div>
+        </div>
+      </div>
+      
+      <div class="stat-card" data-voice-command="show points">
+        <i class='bx bx-medal'></i>
+        <h3>Total Points</h3>
+        <div class="streak-display" style="color: var(--primary-color);">475</div>
+        <p>Earned from meals and challenges</p>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 47.5%"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="badges-section">
+      <h2 class="section-title"><i class='bx bx-award'></i> Your Badges</h2>
+      <div class="badges-grid">
+        <div class="badge-card earned" data-voice-command="first step badge">
+          <div class="badge-icon"><i class='bx bx-check'></i></div>
+          <h3>First Step</h3>
+          <p>Created your first meal plan</p>
+        </div>
+        
+        <div class="badge-card earned" data-voice-command="protein pro badge">
+          <div class="badge-icon"><i class='bx bx-dumbbell'></i></div>
+          <h3>Protein Pro</h3>
+          <p>5 high-protein meals</p>
+        </div>
+        
+        <div class="badge-card earned" data-voice-command="veggie lover badge">
+          <div class="badge-icon"><i class='bx bx-leaf'></i></div>
+          <h3>Veggie Lover</h3>
+          <p>10 vegetable-rich meals</p>
+        </div>
+        
+        <div class="badge-card earned" data-voice-command="streak badge">
+          <div class="badge-icon"><i class="fas fa-fire"></i></div>
+          <h3>7-Day Streak</h3>
+          <p>Log meals for 7 straight days</p>
+        </div>
+        
+        <div class="badge-card earned" data-voice-command="consistent badge">
+          <div class="badge-icon"><i class='bx bx-trending-up'></i></div>
+          <h3>Consistent</h3>
+          <p>15 meals in 15 days</p>
+        </div>
+        
+        <div class="badge-card earned" data-voice-command="heart healthy badge">
+          <div class="badge-icon"><i class='bx bx-heart'></i></div>
+          <h3>Heart Healthy</h3>
+          <p>10 heart-healthy meals</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ranks-section">
+      <h2 class="section-title"><i class='bx bx-trophy'></i> Achievement Ranks</h2>
+      <div class="ranks-grid">
+        <div class="rank-card bronze current" data-voice-command="bronze rank">
+          <div class="rank-icon"><i class='bx bx-medal'></i></div>
+          <h3>Bronze Chef</h3>
+          <p>0-250 points</p>
+          <div class="rank-progress">
+            <p>Current Rank</p>
+          </div>
+        </div>
+        
+        <div class="rank-card silver" data-voice-command="silver rank">
+          <div class="rank-icon"><i class='bx bx-medal'></i></div>
+          <h3>Silver Chef</h3>
+          <p>251-500 points</p>
+          <div class="rank-progress">
+            <p>125 points to go</p>
+          </div>
+        </div>
+        
+        <div class="rank-card gold" data-voice-command="gold rank">
+          <div class="rank-icon"><i class='bx bx-medal'></i></div>
+          <h3>Gold Chef</h3>
+          <p>501-1000 points</p>
+          <div class="rank-progress">
+            <p>Earn Silver first</p>
+          </div>
+        </div>
+        
+        <div class="rank-card platinum" data-voice-command="platinum rank">
+          <div class="rank-icon"><i class='bx bx-medal'></i></div>
+          <h3>Platinum Chef</h3>
+          <p>1001+ points</p>
+          <div class="rank-progress">
+            <p>Master level</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/handsfree-for-website/dist/handsfree-for-website.js" crossorigin></script>
+  <script>
+    // Initialize voice control
+    const handsfree = window.handsfreeForWebsite.init({
+      lang: 'en-US',
+      turnedOn: false,
+      continuesRecognition: true
+    });
+    
+    // Add custom voice commands for rewards page
+    const rewardsModule = {
+      name: 'Rewards',
+      description: 'Custom commands for Rewards page',
+      contexts: [{
+        context: 'root',
+        commands: [
+          {
+            name: 'go home',
+            action: () => {
+              window.location.href = '/';
+              showFeedback('Go home');
+            }
+          },
+          {
+            name: 'create plan',
+            action: () => {
+              window.location.href = 'generate';
+              showFeedback('Create plan');
+            }
+          },
+          {
+            name: 'show badges',
+            action: () => {
+              document.querySelector('.badges-section').scrollIntoView({ behavior: 'smooth' });
+              showFeedback('Show badges');
+            }
+          },
+          {
+            name: 'show ranks',
+            action: () => {
+              document.querySelector('.ranks-section').scrollIntoView({ behavior: 'smooth' });
+              showFeedback('Show ranks');
+            }
+          },
+          {
+            name: 'show stats',
+            action: () => {
+              document.querySelector('.stats-grid').scrollIntoView({ behavior: 'smooth' });
+              showFeedback('Show stats');
+            }
+          },
+          {
+            name: 'help',
+            action: () => {
+              alert('Available voice commands: "Show badges", "Show ranks", "Show stats", "Show streak", "Show rank", "Show points", "Go home", "Create plan"');
+              showFeedback('Help');
+            }
+          }
+        ]
+      }]
+    };
+    
+    handsfree.addModules([rewardsModule]);
+    
+    // Voice control toggle
+    const voiceControl = document.getElementById('voiceControl');
+    const voiceFeedback = document.getElementById('voiceFeedback');
+    const lastCommand = document.getElementById('lastCommand');
+    
+    function showFeedback(command) {
+      lastCommand.textContent = command;
+      voiceFeedback.classList.add('active');
+      setTimeout(() => {
+        voiceFeedback.classList.remove('active');
+      }, 3000);
+    }
+    
+    voiceControl.addEventListener('click', () => {
+      if (voiceControl.classList.contains('active')) {
+        handsfree.turnOff();
+        voiceControl.classList.remove('active');
+        voiceFeedback.classList.remove('active');
+      } else {
+        handsfree.turnOn();
+        voiceControl.classList.add('active');
+        voiceFeedback.classList.add('active');
+        showFeedback('Listening...');
+      }
+    });
+    
+    // Add click event to all voice command elements
+    document.querySelectorAll('[data-voice-command]').forEach(element => {
+      element.addEventListener('click', function() {
+        showFeedback(this.getAttribute('data-voice-command'));
+      });
+    });
+    
+    // Add event listener for voice commands
+    handsfree.onCommand = (command) => {
+      showFeedback(command);
+      
+      // Find and click elements with matching voice command data attributes
+      const elements = document.querySelectorAll('[data-voice-command]');
+      elements.forEach(el => {
+        if (command.toLowerCase().includes(el.getAttribute('data-voice-command').toLowerCase())) {
+          el.click();
+        }
+      });
+    };
+    
+    // Browser compatibility check
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+      voiceControl.style.display = 'none';
+      console.warn('Speech recognition not supported in this browser');
+    }
+  </script>
+</body>
+</html>

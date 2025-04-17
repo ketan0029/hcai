@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plan</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('Background.jpeg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+
+        .container {
+            flex: 1; /* Takes available space between header and footer */
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .meal {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .meal h2 {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border-radius: 15px 15px 0 0;
+            margin: -20px -20px 20px -20px;
+        }
+
+        .sub-meal {
+            margin: 15px 0;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #fafafa;
+        }
+
+        .sub-meal p {
+            margin: 5px 0;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            color: #555;
+        }
+
+        footer {
+
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="meal">
+            <h2>Meal 1</h2>
+            <div class="sub-meal">
+                <p><strong>Name:</strong> <span>{{selected_meals[0]['name']}}</span></p>
+                <p><strong>Calories:</strong> <span>{{selected_meals[0]['calories']}}</span></p>
+                <p><strong>Protein:</strong> <span>{{selected_meals[0]['protein']}}</span></p>
+                <p><strong>Carbohydrates:</strong> <span>{{selected_meals[0]['carbohydrate']}}</span></p>
+                <p><strong>Cuisine Type:</strong> <span>{{selected_meals[0]['Cuisine_type']}}</span></p>
+                <p><strong>Total Fat:</strong> <span>{{selected_meals[0]['total_fat']}}</span></p>
+                <p><strong>Estimated Weight:</strong> <span>{{selected_meals[0]['Estimated_Weight(g)']}}g</span></p>
+            </div>
+        </div>
+
+        <div class="meal">
+            <h2>Meal 2</h2>
+            <div class="sub-meal">
+                <p><strong>Name:</strong> <span>{{selected_meals[1]['name']}}</span></p>
+                <p><strong>Calories:</strong> <span>{{selected_meals[1]['calories']}}</span></p>
+                <p><strong>Protein:</strong> <span>{{selected_meals[1]['protein']}}</span></p>
+                <p><strong>Carbohydrates:</strong> <span>{{selected_meals[1]['carbohydrate']}}</span></p>
+                <p><strong>Cuisine Type:</strong> <span>{{selected_meals[1]['Cuisine_type']}}</span></p>
+                <p><strong>Total Fat:</strong> <span>{{selected_meals[1]['total_fat']}}</span></p>
+                <p><strong>Estimated Weight:</strong> <span>{{selected_meals[1]['Estimated_Weight(g)']}}g</span></p>
+
+            </div>
+        </div>
+
+        <div class="meal">
+            <h2>Meal 3</h2>
+            <div class="sub-meal">
+                <p><strong>Name:</strong> <span>{{selected_meals[2]['name']}}</span></p>
+                <p><strong>Calories:</strong> <span>{{selected_meals[2]['calories']}}</span></p>
+                <p><strong>Protein:</strong> <span>{{selected_meals[2]['protein']}}</span></p>
+                <p><strong>Carbohydrates:</strong> <span>{{selected_meals[2]['carbohydrate']}}</span></p>
+                <p><strong>Cuisine Type:</strong> <span>{{selected_meals[2]['Cuisine_type']}}</span></p>
+                <p><strong>Total Fat:</strong> <span>{{selected_meals[2]['total_fat']}}</span></p>
+                <p><strong>Estimated Weight:</strong> <span>{{selected_meals[2]['Estimated_Weight(g)']}}g</span></p>
+
+            </div>
+        </div>
+
+        <div class="meal">
+            <h2>Meal 4</h2>
+            <div class="sub-meal">
+                <p><strong>Name:</strong> <span>{{selected_meals[3]['name']}}</span></p>
+                <p><strong>Calories:</strong> <span>{{selected_meals[3]['calories']}}</span></p>
+                <p><strong>Protein:</strong> <span>{{selected_meals[3]['protein']}}</span></p>
+                <p><strong>Carbohydrates:</strong> <span>{{selected_meals[3]['carbohydrate']}}</span></p>
+                <p><strong>Cuisine Type:</strong> <span>{{selected_meals[3]['Cuisine_type']}}</span></p>
+                <p><strong>Total Fat:</strong> <span>{{selected_meals[3]['total_fat']}}</span></p>
+                <p><strong>Estimated Weight:</strong> <span>{{selected_meals[3]['Estimated_Weight(g)']}}g</span></p>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Meal Planner | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

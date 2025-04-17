@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Meal Planner</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #5B3407;
+      --secondary-color: #F8F1E5;
+      --accent-color: #E8C07D;
+      --text-dark: #333;
+      --text-light: #777;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background: url('/static/background-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
+      z-index: -1;
+    }
+    
+    header {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 1rem 5%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .voice-control {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-left: 38px;
+    }
+    
+    .voice-control:hover {
+      background-color: var(--accent-color);
+    }
+    
+    .voice-control.active {
+      background-color: #4CAF50;
+      animation: pulse 1.5s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+    }
+    
+    .voice-feedback {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 1000;
+    }
+    
+    .voice-feedback.active {
+      display: block;
+    }
+    
+    .voice-command {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    
+    .main-container {
+      margin-top: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 5%;
+    }
+    
+    .content-container {
+      width: 100%;
+      max-width: 1200px;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+    }
+    
+    .image-section {
+      flex: 1;
+      overflow: hidden;
+    }
+    
+    .image-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .image-section:hover img {
+      transform: scale(1.03);
+    }
+    
+    .text-section {
+      flex: 1;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .text-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    
+    .text-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+    }
+    
+    .text-section p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-light);
+      margin-bottom: 2.5rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-align: center;
+      margin-top: 1rem;
+      border: 2px solid var(--primary-color);
+    }
+    
+    .cta-button:hover {
+      background-color: transparent;
+      color: var(--primary-color);
+    }
+    .chatbot-icon {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-left: 1.2rem;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .chatbot-icon:hover {
+      color: var(--accent-color);
+    }
+    
+    
+    
+    @media (max-width: 1024px) {
+      .content-container {
+        flex-direction: column;
+      }
+      
+      .image-section {
+        height: 400px;
+      }
+      
+      .text-section {
+        padding: 2rem;
+      }
+      
+      .text-section h1 {
+        font-size: 2.8rem;
+      }
+      
+      .text-section h2 {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .voice-control {
+        padding: 0.5rem;
+      }
+      
+      .voice-control span {
+        display: none;
+      }
+      
+      .text-section h1 {
+        font-size: 2.2rem;
+      }
+      
+      .text-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">AI Meal Planner</div>
+    <nav>
+      <div class="nav-links">
+        <a href="generate" class="nav-link" data-voice-command="generate plan">Generate Plan</a>
+        <a href="Find_Similar_Items" class="nav-link" data-voice-command="find similar items">Find Similar Items</a>
+        <a href="Choose_nutritional" class="nav-link" data-voice-command="nutritional needs">Nutritional Needs</a>
+        <a href="http://localhost:3000/" class="nav-link" data-voice-command="nutritional needs">Calorie Tracker</a>
+        <a href="rewards" class="nav-link active" data-voice-command="my rewards">My Rewards</a>
+      </div>
+
+      <div>
+        <a href="http://localhost:5300" class="chatbot-icon" title="Chat with AI">
+          <i class="fas fa-robot"></i>
+        </a>
+      </div>
+
+      <div class="voice-control" id="voiceControl">
+        <i class='bx bx-microphone'></i>
+        <span>Voice Control</span>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="voice-feedback" id="voiceFeedback">
+    <p>Listening for commands...</p>
+    <p>Last command: <span class="voice-command" id="lastCommand"></span></p>
+  </div>
+  
+  <div class="main-container">
+    <div class="content-container">
+      <div class="image-section">
+        <img src="/static/img3.jpg" alt="Healthy meal plan" loading="lazy">
+      </div>
+      <div class="text-section">
+        <h1>Welcome To</h1>
+        <h2>Your Personalized AI Meal Planner</h2>
+        <p>Our advanced AI generates customized one-week meal plans tailored to your dietary preferences, allergies, health goals, and number of meals per day. Whether you're aiming to lose weight, gain muscle, or simply maintain a healthier lifestyle, our app creates delicious, nutritionally-balanced meal plans to help you achieve your objectives effortlessly.</p>
+        <a href="generate" class="cta-button" data-voice-command="get started">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/handsfree-for-website/dist/handsfree-for-website.js" crossorigin></script>
+  <script>
+    // Initialize voice control
+    const handsfree = window.handsfreeForWebsite.init({
+      lang: 'en-US',
+      turnedOn: false,
+      continuesRecognition: true
+    });
+    
+    // Add custom voice commands
+    const mealPlannerModule = {
+      name: 'Meal Planner',
+      description: 'Custom commands for AI Meal Planner',
+      contexts: [{
+        context: 'root',
+        commands: [
+          {
+            name: 'go home',
+            action: () => {
+              window.location.href = '/';
+              showFeedback('Go home');
+            }
+          },
+          {
+            name: 'show rewards',
+            action: () => {
+              window.location.href = 'rewards.html';
+              showFeedback('Show rewards');
+            }
+          },
+          {
+            name: 'create new plan',
+            action: () => {
+              window.location.href = 'generate';
+              showFeedback('Create new plan');
+            }
+          },
+          {
+            name: 'help',
+            action: () => {
+              alert('Available voice commands: "Generate plan", "Find similar items", "Nutritional needs", "My rewards", "Go home", "Show rewards", "Create new plan"');
+              showFeedback('Help');
+            }
+          }
+        ]
+      }]
+    };
+    
+    handsfree.addModules([mealPlannerModule]);
+    
+    // Voice control toggle
+    const voiceControl = document.getElementById('voiceControl');
+    const voiceFeedback = document.getElementById('voiceFeedback');
+    const lastCommand = document.getElementById('lastCommand');
+    
+    function showFeedback(command) {
+      lastCommand.textContent = command;
+      voiceFeedback.classList.add('active');
+      setTimeout(() => {
+        voiceFeedback.classList.remove('active');
+      }, 3000);
+    }
+    
+    voiceControl.addEventListener('click', () => {
+      if (voiceControl.classList.contains('active')) {
+        handsfree.turnOff();
+        voiceControl.classList.remove('active');
+        voiceFeedback.classList.remove('active');
+      } else {
+        handsfree.turnOn();
+        voiceControl.classList.add('active');
+        voiceFeedback.classList.add('active');
+        showFeedback('Listening...');
+      }
+    });
+    
+    // Add click event to all voice command elements
+    document.querySelectorAll('[data-voice-command]').forEach(element => {
+      element.addEventListener('click', function() {
+        showFeedback(this.getAttribute('data-voice-command'));
+      });
+    });
+    
+    // Add event listener for voice commands
+    handsfree.onCommand = (command) => {
+      showFeedback(command);
+      
+      // Find and click elements with matching voice command data attributes
+      const elements = document.querySelectorAll('[data-voice-command]');
+      elements.forEach(el => {
+        if (command.toLowerCase().includes(el.getAttribute('data-voice-command').toLowerCase())) {
+          el.click();
+        }
+      });
+    };
+    
+    // Browser compatibility check
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+      voiceControl.style.display = 'none';
+      console.warn('Speech recognition not supported in this browser');
+    }
+  </script>
+</body>
+</html>

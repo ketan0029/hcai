@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Meal Planner | Similar Items</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #5B3407;
+      --secondary-color: #F8F1E5;
+      --accent-color: #E8C07D;
+      --text-dark: #333;
+      --text-light: #777;
+      --highlight-1: #2f2e30;
+      --highlight-2: #a16666;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background: url('/static/background-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
+      z-index: -1;
+    }
+    
+    header {
+      background-color: white;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .voice-control {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .voice-control:hover {
+      background-color: var(--accent-color);
+    }
+    
+    .voice-control.active {
+      background-color: #4CAF50;
+      animation: pulse 1.5s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+    }
+    
+    .voice-feedback {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 1000;
+    }
+    
+    .voice-feedback.active {
+      display: block;
+    }
+    
+    .voice-command {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    
+    .main-container {
+      margin-top: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 5%;
+    }
+    
+    .table-container {
+      width: 100%;
+      max-width: 1200px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+    }
+    
+    .table-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .table-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .table-header p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      min-width: 800px;
+    }
+    
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+    
+    td {
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    
+    
+    
+    tr:hover {
+      background-color:rgb(201, 228, 47);
+    }
+    
+    .highlight-1 {
+      background-color: var(--highlight-1);
+      color: white;
+    }
+    
+    .highlight-2 {
+      background-color: var(--highlight-2);
+      color: white;
+    }
+    
+    .back-btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .back-btn:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .table-container {
+        padding: 1.5rem;
+      }
+      
+      .table-header h2 {
+        font-size: 1.5rem;
+      }
+      
+      th, td {
+        padding: 0.8rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .voice-control {
+        padding: 0.5rem;
+      }
+      
+      .voice-control span {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">AI Meal Planner</div>
+    <nav>
+      <div class="nav-links">
+        <a href="generate" class="nav-link" data-voice-command="generate plan">Generate Plan</a>
+        <a href="Find_Similar_Items" class="nav-link" data-voice-command="find similar items">Find Similar Items</a>
+        <a href="Choose_nutritional" class="nav-link" data-voice-command="nutritional needs">Nutritional Needs</a>
+        <a href="http://localhost:3000/" class="nav-link" data-voice-command="nutritional needs">Calorie Tracker</a>
+        <a href="rewards" class="nav-link active" data-voice-command="my rewards">My Rewards</a>
+    </div>
+      <div class="voice-control" id="voiceControl">
+        <i class='bx bx-microphone'></i>
+        <span>Voice Control</span>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="voice-feedback" id="voiceFeedback">
+    <p>Listening for commands...</p>
+    <p>Last command: <span class="voice-command" id="lastCommand"></span></p>
+  </div>
+  
+  <div class="main-container">
+    <div class="table-container">
+      <div class="table-header">
+        <h2>{{similar_foodd['product_name']}}</h2>
+        <p>Nutritional comparison with similar food items</p>
+      </div>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Calories</th>
+            <th>Protein</th>
+            <th>Carbohydrate</th>
+            <th>Total Fat</th>
+            <th>Fiber</th>
+            <th>Sugars</th>
+            <th>Saturated Fat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-1">
+            <td>{{similar_foodd['similar_products'][0]['name']}}</td>
+            <td>{{similar_foodd['similar_products'][0]['calories']}}</td>
+            <td>{{similar_foodd['similar_products'][0]['protein']}}</td>
+            <td>{{similar_foodd['similar_products'][0]['carbohydrate']}}</td>
+            <td>{{similar_foodd['similar_products'][0]['total_fat']}}</td>
+            <td>{{similar_foodd['similar_products'][0]['fiber']}}</td>
+            <td>{{similar_foodd['similar_products'][0]['sugars']}}</td>
+            <td>{{similar_foodd['similar_products'][0]['saturated_fat']}}</td>
+          </tr>
+          <tr class="highlight-1">
+            <td>{{similar_foodd['similar_products'][1]['name']}}</td>
+            <td>{{similar_foodd['similar_products'][1]['calories']}}</td>
+            <td>{{similar_foodd['similar_products'][1]['protein']}}</td>
+            <td>{{similar_foodd['similar_products'][1]['carbohydrate']}}</td>
+            <td>{{similar_foodd['similar_products'][1]['total_fat']}}</td>
+            <td>{{similar_foodd['similar_products'][1]['fiber']}}</td>
+            <td>{{similar_foodd['similar_products'][1]['sugars']}}</td>
+            <td>{{similar_foodd['similar_products'][1]['saturated_fat']}}</td>
+          </tr>
+          <tr class="highlight-1">
+            <td>{{similar_foodd['similar_products'][2]['name']}}</td>
+            <td>{{similar_foodd['similar_products'][2]['calories']}}</td>
+            <td>{{similar_foodd['similar_products'][2]['protein']}}</td>
+            <td>{{similar_foodd['similar_products'][2]['carbohydrate']}}</td>
+            <td>{{similar_foodd['similar_products'][2]['total_fat']}}</td>
+            <td>{{similar_foodd['similar_products'][2]['fiber']}}</td>
+            <td>{{similar_foodd['similar_products'][2]['sugars']}}</td>
+            <td>{{similar_foodd['similar_products'][2]['saturated_fat']}}</td>
+          </tr>
+          <tr class="highlight-1">
+            <td>{{similar_foodd['similar_products'][3]['name']}}</td>
+            <td>{{similar_foodd['similar_products'][3]['calories']}}</td>
+            <td>{{similar_foodd['similar_products'][3]['protein']}}</td>
+            <td>{{similar_foodd['similar_products'][3]['carbohydrate']}}</td>
+            <td>{{similar_foodd['similar_products'][3]['total_fat']}}</td>
+            <td>{{similar_foodd['similar_products'][3]['fiber']}}</td>
+            <td>{{similar_foodd['similar_products'][3]['sugars']}}</td>
+            <td>{{similar_foodd['similar_products'][3]['saturated_fat']}}</td>
+          </tr>
+          <tr class="highlight-1">
+            <td>{{similar_foodd['similar_products'][4]['name']}}</td>
+            <td>{{similar_foodd['similar_products'][4]['calories']}}</td>
+            <td>{{similar_foodd['similar_products'][4]['protein']}}</td>
+            <td>{{similar_foodd['similar_products'][4]['carbohydrate']}}</td>
+            <td>{{similar_foodd['similar_products'][4]['total_fat']}}</td>
+            <td>{{similar_foodd['similar_products'][4]['fiber']}}</td>
+            <td>{{similar_foodd['similar_products'][4]['sugars']}}</td>
+            <td>{{similar_foodd['similar_products'][4]['saturated_fat']}}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <button onclick="window.history.back()" class="back-btn" data-voice-command="go back">
+        <i class='bx bx-arrow-back'></i> Back to Search
+      </button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/handsfree-for-website/dist/handsfree-for-website.js" crossorigin></script>
+  <script>
+    // Initialize voice control
+    const handsfree = window.handsfreeForWebsite.init({
+      lang: 'en-US',
+      turnedOn: false,
+      continuesRecognition: true
+    });
+    
+    // Add custom voice commands for table page
+    const tableModule = {
+      name: 'Table',
+      description: 'Custom commands for Table page',
+      contexts: [{
+        context: 'root',
+        commands: [
+          {
+            name: 'go home',
+            action: () => {
+              window.location.href = '/';
+              showFeedback('Go home');
+            }
+          },
+          {
+            name: 'show rewards',
+            action: () => {
+              window.location.href = 'rewards';
+              showFeedback('Show rewards');
+            }
+          },
+          {
+            name: 'create plan',
+            action: () => {
+              window.location.href = 'generate';
+              showFeedback('Create plan');
+            }
+          },
+          {
+            name: 'go back',
+            action: () => {
+              window.history.back();
+              showFeedback('Go back');
+            }
+          },
+          {
+            name: 'help',
+            action: () => {
+              alert('Available voice commands: "Go home", "Show rewards", "Create plan", "Go back"');
+              showFeedback('Help');
+            }
+          }
+        ]
+      }]
+    };
+    
+    handsfree.addModules([tableModule]);
+    
+    // Voice control toggle
+    const voiceControl = document.getElementById('voiceControl');
+    const voiceFeedback = document.getElementById('voiceFeedback');
+    const lastCommand = document.getElementById('lastCommand');
+    
+    function showFeedback(command) {
+      lastCommand.textContent = command;
+      voiceFeedback.classList.add('active');
+      setTimeout(() => {
+        voiceFeedback.classList.remove('active');
+      }, 3000);
+    }
+    
+    voiceControl.addEventListener('click', () => {
+      if (voiceControl.classList.contains('active')) {
+        handsfree.turnOff();
+        voiceControl.classList.remove('active');
+        voiceFeedback.classList.remove('active');
+      } else {
+        handsfree.turnOn();
+        voiceControl.classList.add('active');
+        voiceFeedback.classList.add('active');
+        showFeedback('Listening...');
+      }
+    });
+    
+    // Add click event to all voice command elements
+    document.querySelectorAll('[data-voice-command]').forEach(element => {
+      element.addEventListener('click', function() {
+        showFeedback(this.getAttribute('data-voice-command'));
+      });
+    });
+    
+    // Add event listener for voice commands
+    handsfree.onCommand = (command) => {
+      showFeedback(command);
+      
+      // Find and click elements with matching voice command data attributes
+      const elements = document.querySelectorAll('[data-voice-command]');
+      elements.forEach(el => {
+        if (command.toLowerCase().includes(el.getAttribute('data-voice-command').toLowerCase())) {
+          el.click();
+        }
+      });
+    };
+    
+    // Browser compatibility check
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+      voiceControl.style.display = 'none';
+      console.warn('Speech recognition not supported in this browser');
+    }
+  </script>
+</body>
+</html>

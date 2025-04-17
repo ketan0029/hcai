@@ -1,0 +1,82 @@
+[
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "mean_absolute_error",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "estimate_calories",
+        "kind": 2,
+        "importPath": "accuracy",
+        "description": "accuracy",
+        "peekOfCode": "def estimate_calories(image_path):\n    # Implement the function to use the Calorie-Calculator\n    # For example, if the Calorie-Calculator provides a function `predict_calories`\n    # estimated_calories = predict_calories(image_path)\n    # Replace the following line with the actual implementation\n    estimated_calories = 0  # Placeholder value\n    return estimated_calories\n# Lists to store actual and estimated calorie values\nactual_calories = []\nestimated_calories = []",
+        "detail": "accuracy",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "accuracy",
+        "description": "accuracy",
+        "peekOfCode": "data = [\n    ('path/to/image1.jpg', 500),\n    ('path/to/image2.jpg', 650),\n    ('path/to/image3.jpg', 300),\n    # Add more data as needed\n]\n# Function to estimate calories using the Calorie-Calculator\ndef estimate_calories(image_path):\n    # Implement the function to use the Calorie-Calculator\n    # For example, if the Calorie-Calculator provides a function `predict_calories`",
+        "detail": "accuracy",
+        "documentation": {}
+    },
+    {
+        "label": "actual_calories",
+        "kind": 5,
+        "importPath": "accuracy",
+        "description": "accuracy",
+        "peekOfCode": "actual_calories = []\nestimated_calories = []\n# Process each image\nfor image_path, actual in data:\n    estimated = estimate_calories(image_path)\n    actual_calories.append(actual)\n    estimated_calories.append(estimated)\n# Convert lists to numpy arrays\nactual_calories = np.array(actual_calories)\nestimated_calories = np.array(estimated_calories)",
+        "detail": "accuracy",
+        "documentation": {}
+    },
+    {
+        "label": "estimated_calories",
+        "kind": 5,
+        "importPath": "accuracy",
+        "description": "accuracy",
+        "peekOfCode": "estimated_calories = []\n# Process each image\nfor image_path, actual in data:\n    estimated = estimate_calories(image_path)\n    actual_calories.append(actual)\n    estimated_calories.append(estimated)\n# Convert lists to numpy arrays\nactual_calories = np.array(actual_calories)\nestimated_calories = np.array(estimated_calories)\n# Calculate Mean Absolute Error",
+        "detail": "accuracy",
+        "documentation": {}
+    },
+    {
+        "label": "actual_calories",
+        "kind": 5,
+        "importPath": "accuracy",
+        "description": "accuracy",
+        "peekOfCode": "actual_calories = np.array(actual_calories)\nestimated_calories = np.array(estimated_calories)\n# Calculate Mean Absolute Error\nmae = mean_absolute_error(actual_calories, estimated_calories)\nprint(f'Mean Absolute Error: {mae} calories')",
+        "detail": "accuracy",
+        "documentation": {}
+    },
+    {
+        "label": "estimated_calories",
+        "kind": 5,
+        "importPath": "accuracy",
+        "description": "accuracy",
+        "peekOfCode": "estimated_calories = np.array(estimated_calories)\n# Calculate Mean Absolute Error\nmae = mean_absolute_error(actual_calories, estimated_calories)\nprint(f'Mean Absolute Error: {mae} calories')",
+        "detail": "accuracy",
+        "documentation": {}
+    },
+    {
+        "label": "mae",
+        "kind": 5,
+        "importPath": "accuracy",
+        "description": "accuracy",
+        "peekOfCode": "mae = mean_absolute_error(actual_calories, estimated_calories)\nprint(f'Mean Absolute Error: {mae} calories')",
+        "detail": "accuracy",
+        "documentation": {}
+    }
+]

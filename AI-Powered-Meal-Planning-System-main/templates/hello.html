@@ -1,0 +1,441 @@
+                                                                                                                                                                                                                                                            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Diet Planner with AI Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('Background.jpeg') ;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .diet-plan {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+        .chatbot {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .chatbot input {
+            width: calc(100% - 90px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chatbot button {
+            width: 80px;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .chatbot-response {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+
+        #diet-form {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .voice-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .voice-icon {
+            width: 100px;
+            height: 100px;
+            background: #007BFF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+        }
+        .voice-icon::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(0, 123, 255, 0.3);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        .voice-icon img {
+            width: 50px;
+            height: 50px;
+        }
+        .instruction {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-heading">Accessible Diet Planner with AI Chatbot</h1>
+        <p id="intro">Welcome to the Accessible Diet Planner. Please fill out the form below to get your personalized diet plan.</p>
+        
+        <form id="diet-form">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required aria-required="true">
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required aria-required="true">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" required aria-required="true">
+            
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" required aria-required="true">
+            
+            <label for="activity">Activity Level:</label>
+            <select id="activity" name="activity" required aria-required="true">
+                <option value="sedentary">Sedentary</option>
+                <option value="light">Lightly Active</option>
+                <option value="moderate">Moderately Active</option>
+                <option value="very">Very Active</option>
+            </select>
+            
+            <label for="diet">Dietary Preference:</label>
+            <select id="diet" name="diet" required aria-required="true">
+                <option value="vegetarian">Vegetarian</option>
+                <option value="non-vegetarian">Non-Vegetarian</option>
+                <option value="vegan">Vegan</option>
+            </select>
+            
+            <button type="submit" class="btn" id="generate-plan" aria-label="Generate Diet Plan">Generate Diet Plan</button>
+        </form>
+        
+        <div class="voice-container">
+            <div class="voice-icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/microphone.png" alt="Voice Input">
+            </div>
+            <p class="instruction">Speak to input your details</p>
+        </div>
+        <div id="diet-result" class="diet-plan" aria-live="polite" hidden>
+            <h2>Your Personalized Diet Plan</h2>
+            <p id="plan-details"></p>
+        </div>
+
+
+    </div>
+    
+    <script>
+
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = false;
+        recognition.lang = "en-US";
+
+        function speak(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = "en-US";
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function readContent() {
+            speak("Welcome to the Accessible Diet Planner with AI Chatbot. This website is designed to be screen reader-friendly and accessible for visually impaired users. Please fill out the form to get your personalized diet plan.");
+        }
+
+        setTimeout(readContent, 1000); 
+        recognition.onstart = () => {
+            speak("You can say 'Start Form' to begin filling out the form, 'Generate Plan' to submit the form, or 'Ask Chatbot' to ask a question.");
+        };
+
+        recognition.onerror = (event) => {
+            console.error("Speech recognition error:", event.error);
+            speak("Sorry, there was an error processing your voice command. Please try again.");
+            restartRecognition();
+        };
+
+        recognition.onend = () => {
+            console.log("Speech recognition ended. Restarting...");
+            restartRecognition();
+        };
+
+        function restartRecognition() {
+            recognition.stop();
+            setTimeout(() => {
+                recognition.start();
+            }, 500);
+        }
+
+        let currentField = null;
+        const formFields = ["age", "gender", "weight", "height", "activity", "diet"];
+        let currentFieldIndex = 0;
+
+        function guideUserToFillForm() {
+            currentFieldIndex = 0;
+            askForField(formFields[currentFieldIndex]);
+        }
+
+        function askForField(field) {
+            currentField = document.getElementById(field);
+            switch (field) {
+                case "age":
+                    speak("Please provide your age.");
+                    break;
+                case "gender":
+                    speak("Please provide your gender: Male, Female, or Other.");
+                    break;
+                case "weight":
+                    speak("Please provide your weight in kilograms.");
+                    break;
+                case "height":
+                    speak("Please provide your height in centimeters.");
+                    break;
+                case "activity":
+                    speak("Please provide your activity level: Sedentary, Lightly Active, Moderately Active, or Very Active.");
+                    break;
+                case "diet":
+                    speak("Please provide your dietary preference: Vegetarian, Non-Vegetarian, or Vegan.");
+                    break;
+            }
+        }
+
+        recognition.onresult = (event) => {
+            const transcript = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
+            console.log("Transcribed Value:", transcript); 
+            if (transcript.includes("start")) {
+                guideUserToFillForm();
+            } else if (transcript.includes("generate plan")) {
+                document.getElementById("diet-form").submit();
+            } else if (transcript.includes("ask chatbot")) {
+                speak("What would you like to ask the chatbot?");
+                recognition.stop(); 
+                setTimeout(() => {
+                    recognition.start(); 
+                }, 5000); 
+            } else if (currentField) {
+                const fieldId = formFields[currentFieldIndex];
+                if (fieldId === "age") {
+                    const age = parseInt(transcript, 10);
+                    if (!isNaN(age)) {
+                        document.getElementById("age").value = age;
+                        speak(`You entered ${age}.`);
+                        currentFieldIndex++;
+                        askForField(formFields[currentFieldIndex]);
+                    } else {
+                        speak("Please provide a valid age.");
+                    }
+                } else if (fieldId === "gender") {
+                    if (transcript.includes("male")) {
+                        document.getElementById("gender").value = "male";
+                        speak("You selected Male.");
+                    } else if (transcript.includes("female")) {
+                        document.getElementById("gender").value = "female";
+                        speak("You selected Female.");
+                    } else if (transcript.includes("other")) {
+                        document.getElementById("gender").value = "other";
+                        speak("You selected Other.");
+                    } else {
+                        speak("Please provide a valid gender: Male, Female, or Other.");
+                        return;
+                    }
+                    currentFieldIndex++;
+                    askForField(formFields[currentFieldIndex]);
+                } else if (fieldId === "weight") {
+                    const weight = parseFloat(transcript);
+                    if (!isNaN(weight)) {
+                        document.getElementById("weight").value = weight;
+                        speak(`You entered ${weight} kilograms.`);
+                        currentFieldIndex++;
+                        askForField(formFields[currentFieldIndex]);
+                    } else {
+                        speak("Please provide a valid weight.");
+                    }
+                } else if (fieldId === "height") {
+                    const height = parseFloat(transcript);
+                    if (!isNaN(height)) {
+                        document.getElementById("height").value = height;
+                        speak(`You entered ${height} centimeters.`);
+                        currentFieldIndex++;
+                        askForField(formFields[currentFieldIndex]);
+                    } else {
+                        speak("Please provide a valid height.");
+                    }
+                } else if (fieldId === "activity") {
+                    if (transcript.includes("sedentary")) {
+                        document.getElementById("activity").value = "sedentary";
+                        speak("You selected Sedentary.");
+                    } else if (transcript.includes("lightly active")) {
+                        document.getElementById("activity").value = "light";
+                        speak("You selected Lightly Active.");
+                    } else if (transcript.includes("moderately active")) {
+                        document.getElementById("activity").value = "moderate";
+                        speak("You selected Moderately Active.");
+                    } else if (transcript.includes("very active")) {
+                        document.getElementById("activity").value = "very";
+                        speak("You selected Very Active.");
+                    } else {
+                        speak("Please provide a valid activity level: Sedentary, Lightly Active, Moderately Active, or Very Active.");
+                        return;
+                    }
+                    currentFieldIndex++;
+                    askForField(formFields[currentFieldIndex]);
+                } else if (fieldId === "diet") {
+                    if (transcript.includes("vegetarian")) {
+                        document.getElementById("diet").value = "vegetarian";
+                        speak("You selected Vegetarian.");
+                    } else if (transcript.includes("non-vegetarian")) {
+                        document.getElementById("diet").value = "non-vegetarian";
+                        speak("You selected Non-Vegetarian.");
+                    } else if (transcript.includes("vegan")) {
+                        document.getElementById("diet").value = "vegan";
+                        speak("You selected Vegan.");
+                    } else {
+                        speak("Please provide a valid dietary preference: Vegetarian, Non-Vegetarian, or Vegan.");
+                        return;
+                    }
+                    speak("Form completed. You can now say 'Generate Plan' to get your diet plan.");
+                    currentField = null;
+                }
+            } else if (transcript.includes("ask chat bot")) {
+
+                const question = transcript.replace("ask chatbot", "").trim();
+                if (question) {
+                    askChatbot(question);
+                }
+            }
+        };
+
+        // Start recognition
+        recognition.start();
+
+        // AI Chatbot Functionality
+        async function askChatbot(question) {
+            const responseElement = document.getElementById("chatbot-response");
+            responseElement.textContent = "Thinking...";
+            speak("Thinking...");
+
+            // Replace with your OpenAI API key and endpoint
+            const apiKey = "YOUR_OPENAI_API_KEY";
+            const apiUrl = "https://api.openai.com/v1/chat/completions";
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${apiKey}`,
+                    },
+                    body: JSON.stringify({
+                        model: "gpt-3.5-turbo",
+                        messages: [{ role: "user", content: question }],
+                    }),
+                });
+
+                const data = await response.json();
+                const answer = data.choices[0].message.content;
+                responseElement.textContent = answer;
+                speak(answer);
+            } catch (error) {
+                responseElement.textContent = "Sorry, I couldn't process your request.";
+                speak("Sorry, I couldn't process your request.");
+            }
+        }
+
+        // Chatbot Input Handler
+        document.getElementById("ask-chatbot").addEventListener("click", () => {
+            const question = document.getElementById("chatbot-input").value;
+            if (question) {
+                askChatbot(question);
+            }
+        });
+
+        // Generate Diet Plan
+        document.getElementById("diet-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const age = document.getElementById("age").value;
+            const gender = document.getElementById("gender").value;
+            const weight = document.getElementById("weight").value;
+            const height = document.getElementById("height").value;
+            const activity = document.getElementById("activity").value;
+            const diet = document.getElementById("diet").value;
+
+            const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+
+            let plan = `Based on your input (Age: ${age}, Gender: ${gender}, Weight: ${weight} kg, Height: ${height} cm, Activity Level: ${activity}, Diet: ${diet}), here is your personalized diet plan:\n\n`;
+            plan += `- Breakfast: Oatmeal with fruits\n`;
+            plan += `- Lunch: Grilled chicken salad (or tofu salad for vegetarians/vegans)\n`;
+            plan += `- Dinner: Steamed vegetables with quinoa\n`;
+            plan += `- Snacks: Nuts and yogurt (or plant-based alternatives)\n`;
+            plan += `- BMI: ${bmi} (${bmi < 18.5 ? "Underweight" : bmi < 24.9 ? "Normal Weight" : bmi < 29.9 ? "Overweight" : "Obese"})`;
+
+            const planDetails = document.getElementById("plan-details");
+            planDetails.textContent = plan;
+            document.getElementById("diet-result").hidden = false;
+
+            // Speak the plan
+            speak("Your diet plan has been generated. " + plan);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+name,Cuisine_type,Dish Type,Units,protein,carbohydrate,total_fat,calories,Estimated_Weight(g)
+Oats & Berries,Indian,Vegetarian,Per 100g,3.5,36.7,6.0,214.8,200.0
+Broccoli Casserole,Indian,Low-Calorie,Per 100g,7.0,37.2,2.5,199.3,150.0
+Rajma Chawal,Mexican,High-Protein,Per 100g,7.0,49.0,6.3,280.7,250.0
+Pav Bhaji,Italian,Vegan,Per 100g,10.6,27.4,14.1,278.9,180.0
+Biryani,Mexican,Keto-Friendly,Per 100g,8.7,24.0,5.8,183.0,220.0
+Uttapam,Mexican,High-Protein,Per 100g,9.0,46.5,1.1,231.9,250.0
+Tofu Scramble,Middle Eastern,High-Protein,Per 100g,7.3,49.9,15.5,368.3,250.0
+Vegetable Korma,Indian,Gluten-Free,Per 100g,14.8,19.7,7.0,201.0,200.0
+Kadhi Pakora,Indian,Low-Calorie,Per 100g,5.5,16.6,12.4,200.0,150.0
+Jackfruit Curry,Italian,Keto-Friendly,Per 100g,6.1,34.4,7.3,227.7,220.0
+Uttapam,Mexican,Low-Calorie,Per 100g,5.2,17.9,2.6,115.8,150.0
+Thepla,Indian,Vegan,Per 100g,2.5,31.0,16.6,283.4,180.0
+Methi Paratha,Asian,Vegetarian,Per 100g,6.5,24.4,13.3,243.3,200.0
+Vegetable Sushi,Italian,Low-Calorie,Per 100g,2.5,28.7,3.1,152.7,150.0
+Uttapam,Mexican,Vegan,Per 100g,13.5,35.7,16.1,341.7,180.0
+Black Bean Tacos,Mexican,Keto-Friendly,Per 100g,4.6,22.7,19.0,280.2,220.0
+Kadhi Pakora,Mexican,Low-Calorie,Per 100g,2.3,40.8,6.1,227.3,150.0
+Avocado Toast,Middle Eastern,High-Protein,Per 100g,14.1,17.2,10.2,217.0,250.0
+Vegetable Korma,Indian,Low-Calorie,Per 100g,7.2,26.6,15.4,273.8,150.0
+Baingan Bharta,Indian,Vegetarian,Per 100g,14.0,6.1,3.9,115.5,200.0
+Thepla,Middle Eastern,Low-Calorie,Per 100g,3.9,46.9,13.0,320.2,150.0
+Rasam,Indian,Gluten-Free,Per 100g,11.9,7.5,2.3,98.3,200.0
+Vegetable Sushi,Indian,Vegan,Per 100g,13.4,25.8,9.8,245.0,180.0
+Tofu Scramble,Mediterranean,Vegetarian,Per 100g,10.7,18.4,18.2,280.2,200.0
+Vegetable Sushi,Indian,High-Protein,Per 100g,14.1,23.1,1.3,160.5,250.0
+Gobi Manchurian,Italian,Vegetarian,Per 100g,10.1,41.7,9.3,290.9,200.0
+Oats & Berries,Asian,Vegan,Per 100g,10.6,43.7,12.0,325.2,180.0
+Sweet Potato Stew,Italian,High-Protein,Per 100g,11.8,39.0,11.4,305.8,250.0
+Bhindi Masala,American,Low-Calorie,Per 100g,7.7,30.3,8.7,230.3,150.0
+Eggplant Parmesan,Italian,Vegan,Per 100g,11.4,46.4,9.3,314.9,180.0
+Oats & Berries,Italian,Vegan,Per 100g,6.7,16.3,10.6,187.4,180.0
+Uttapam,Asian,Gluten-Free,Per 100g,3.2,12.0,6.5,119.3,200.0
+Methi Paratha,Middle Eastern,Keto-Friendly,Per 100g,12.7,41.8,15.5,357.5,220.0
+Bhindi Masala,American,High-Protein,Per 100g,14.2,13.0,13.4,229.4,250.0
+Stuffed Tomatoes,American,Vegan,Per 100g,3.9,8.5,6.3,106.3,180.0
+Coconut Rice,Mediterranean,High-Protein,Per 100g,6.2,11.2,6.3,126.3,250.0
+Grilled Paneer Tikka,Middle Eastern,High-Protein,Per 100g,3.4,49.5,16.8,362.8,250.0
+Pasta Primavera,Mexican,Vegetarian,Per 100g,5.0,15.2,19.6,257.2,200.0
+Chia Pudding,Mediterranean,Gluten-Free,Per 100g,5.3,26.8,18.2,292.2,200.0
+Matar Paneer,Mexican,Keto-Friendly,Per 100g,5.2,21.9,18.8,277.6,220.0
+Broccoli Casserole,Italian,Low-Calorie,Per 100g,14.0,7.6,19.8,264.6,150.0
+Undhiyu,Indian,Vegetarian,Per 100g,12.8,12.5,19.9,280.3,200.0
+Undhiyu,Asian,Low-Calorie,Per 100g,8.6,45.1,3.6,247.2,150.0
+Dal Tadka,Middle Eastern,Gluten-Free,Per 100g,14.4,19.1,2.3,154.7,200.0
+Black Bean Tacos,Asian,Keto-Friendly,Per 100g,2.0,43.7,4.5,223.3,220.0
+Rasam,Mexican,Keto-Friendly,Per 100g,10.8,15.5,2.6,128.6,220.0
+Vegetable Biryani,Mexican,Vegan,Per 100g,4.7,34.9,19.4,333.0,180.0
+Thepla,Mediterranean,Keto-Friendly,Per 100g,10.7,29.9,7.3,228.1,220.0
+Stuffed Tomatoes,Middle Eastern,Low-Calorie,Per 100g,8.5,43.4,5.7,258.9,150.0
+Eggplant Parmesan,Asian,Low-Calorie,Per 100g,8.0,42.2,15.6,341.2,150.0
+Broccoli Casserole,Middle Eastern,Keto-Friendly,Per 100g,10.7,39.9,1.9,219.5,220.0
+Matar Paneer,Indian,Vegetarian,Per 100g,13.0,42.0,10.6,315.4,200.0
+Poha,Indian,Keto-Friendly,Per 100g,12.7,6.9,17.2,233.2,220.0
+Quinoa Pulao,Middle Eastern,Keto-Friendly,Per 100g,9.2,42.7,19.6,384.0,220.0
+Stuffed Bell Peppers,Italian,High-Protein,Per 100g,6.7,45.7,8.5,286.1,250.0
+Miso Soup,Mexican,Gluten-Free,Per 100g,9.3,16.1,1.2,112.4,200.0
+Broccoli Casserole,Mexican,Keto-Friendly,Per 100g,14.2,9.2,15.7,234.9,220.0
+Eggplant Parmesan,American,Gluten-Free,Per 100g,8.7,10.7,19.0,248.6,200.0
+Baingan Bharta,Italian,High-Protein,Per 100g,2.8,25.6,11.9,220.7,250.0
+Uttapam,Middle Eastern,High-Protein,Per 100g,8.6,16.8,5.2,148.4,250.0
+Tofu Scramble,Italian,Gluten-Free,Per 100g,8.0,16.7,6.8,160.0,200.0
+Pav Bhaji,Asian,Low-Calorie,Per 100g,14.1,38.1,11.4,311.4,150.0
+Rasam,Italian,Low-Calorie,Per 100g,5.3,17.2,1.1,99.9,150.0
+Black Bean Tacos,Asian,Low-Calorie,Per 100g,12.5,25.6,3.1,180.3,150.0
+Biryani,Middle Eastern,Vegetarian,Per 100g,12.0,42.6,5.5,267.9,200.0
+Chia Pudding,Mediterranean,Gluten-Free,Per 100g,2.2,49.3,8.8,285.2,200.0
+Lentil Soup,American,Low-Calorie,Per 100g,8.6,14.1,11.7,196.1,150.0
+Miso Soup,Mexican,Keto-Friendly,Per 100g,2.4,6.6,4.3,74.7,220.0
+Matar Paneer,Italian,Low-Calorie,Per 100g,7.5,17.5,11.1,199.9,150.0
+Biryani,Mediterranean,Gluten-Free,Per 100g,2.6,34.3,9.3,231.3,200.0
+Stuffed Bell Peppers,Mexican,Low-Calorie,Per 100g,2.6,15.6,4.1,109.7,150.0
+Kale & Quinoa Salad,Asian,Gluten-Free,Per 100g,12.0,36.3,7.5,260.7,200.0
+Undhiyu,Mexican,High-Protein,Per 100g,12.8,40.9,6.3,271.5,250.0
+Besan Chilla,Mexican,Keto-Friendly,Per 100g,9.7,7.8,9.5,155.5,220.0
+Rajma Chawal,Middle Eastern,Low-Calorie,Per 100g,9.2,48.6,14.9,365.3,150.0
+Chole Bhature,Asian,High-Protein,Per 100g,9.4,25.6,14.2,267.8,250.0
+Avocado Toast,Italian,High-Protein,Per 100g,7.0,34.0,17.3,319.7,250.0
+Falafel Wrap,Italian,Low-Calorie,Per 100g,9.8,33.6,1.2,184.4,150.0
+Hummus & Pita,Mediterranean,Vegetarian,Per 100g,5.3,36.1,16.1,310.5,200.0
+Matar Paneer,Indian,Low-Calorie,Per 100g,2.2,40.1,16.7,319.5,150.0
+Besan Chilla,American,High-Protein,Per 100g,8.5,16.3,16.3,245.9,250.0
+Uttapam,Italian,Vegetarian,Per 100g,7.9,32.0,2.9,185.7,200.0
+Spinach Dal,Italian,Vegetarian,Per 100g,13.1,43.4,13.6,348.4,200.0
+Hummus & Pita,Indian,Keto-Friendly,Per 100g,8.8,19.1,4.6,153.0,220.0
+Dal Makhani,Indian,Keto-Friendly,Per 100g,13.3,11.3,17.5,255.9,220.0
+Grilled Paneer Tikka,American,Gluten-Free,Per 100g,8.1,39.9,13.1,309.9,200.0
+Broccoli Casserole,Indian,High-Protein,Per 100g,4.0,20.2,5.2,143.6,250.0
+Besan Chilla,Indian,Gluten-Free,Per 100g,14.0,47.6,1.8,262.6,200.0
+Besan Chilla,Asian,Gluten-Free,Per 100g,12.7,12.5,8.0,172.8,200.0
+Uttapam,Middle Eastern,Low-Calorie,Per 100g,6.9,17.1,10.4,189.6,150.0
+Avocado Toast,Mexican,Vegetarian,Per 100g,14.6,45.5,8.7,318.7,200.0
+Masoor Dal,Asian,Vegetarian,Per 100g,10.7,44.9,1.5,235.9,200.0
+Biryani,Mediterranean,Gluten-Free,Per 100g,8.2,11.7,18.4,245.2,200.0
+Sambar,Mexican,Gluten-Free,Per 100g,4.9,26.3,3.8,159.0,200.0
+Avocado Toast,Middle Eastern,Keto-Friendly,Per 100g,3.6,46.9,15.4,340.6,220.0
+Coconut Rice,American,Low-Calorie,Per 100g,11.8,40.2,2.1,226.9,150.0
+Stuffed Bell Peppers,Italian,Low-Calorie,Per 100g,10.1,46.6,11.7,332.1,150.0
+Gobi Manchurian,Asian,Low-Calorie,Per 100g,6.6,32.2,12.8,270.4,150.0
+Oats & Berries,Mexican,Vegan,Per 100g,13.6,16.5,16.4,268.0,180.0
+Black Bean Tacos,American,Vegetarian,Per 100g,4.0,34.2,11.1,252.7,200.0
+Miso Soup,Asian,Keto-Friendly,Per 100g,4.9,41.0,10.5,278.1,220.0
+Avocado Toast,Mediterranean,Vegan,Per 100g,4.8,31.4,17.0,297.8,180.0
+Shahi Paneer,American,Gluten-Free,Per 100g,11.5,48.2,17.3,394.5,200.0
+Coconut Rice,Indian,Vegan,Per 100g,10.3,20.3,16.3,269.1,180.0
+Chole Bhature,Mexican,Keto-Friendly,Per 100g,11.0,47.2,15.3,370.5,220.0
+Dhokla,Indian,Vegan,Per 100g,7.0,17.2,3.2,125.6,180.0
+Rasam,Asian,Vegan,Per 100g,11.0,29.8,5.0,208.2,180.0
+Dal Tadka,Italian,Keto-Friendly,Per 100g,10.6,36.4,14.0,314.0,220.0
+Stuffed Tomatoes,Asian,Vegan,Per 100g,5.6,28.9,6.0,192.0,180.0
+Stuffed Bell Peppers,Middle Eastern,Keto-Friendly,Per 100g,11.8,24.2,19.5,319.5,220.0
+Masoor Dal,Asian,High-Protein,Per 100g,8.7,38.9,2.6,213.8,250.0
+Sambar,Mediterranean,Keto-Friendly,Per 100g,12.2,5.5,4.7,113.1,220.0
+Pav Bhaji,Mediterranean,Keto-Friendly,Per 100g,7.0,14.0,4.7,126.3,220.0
+Broccoli Casserole,Italian,Keto-Friendly,Per 100g,7.3,30.1,11.1,249.5,220.0
+Pav Bhaji,Middle Eastern,High-Protein,Per 100g,8.3,6.0,5.5,106.7,250.0
+Vegetable Korma,Asian,Keto-Friendly,Per 100g,4.1,31.1,7.9,211.9,220.0
+Chole Bhature,Mexican,Vegan,Per 100g,10.5,42.2,18.6,378.2,180.0
+Uttapam,Asian,High-Protein,Per 100g,8.3,41.8,12.5,312.9,250.0
+Soba Noodles,American,Gluten-Free,Per 100g,5.4,30.9,2.6,168.6,200.0
+Miso Soup,Mediterranean,Gluten-Free,Per 100g,8.9,39.0,18.2,355.4,200.0
+Thepla,American,High-Protein,Per 100g,9.3,24.4,6.6,194.2,250.0
+Biryani,Middle Eastern,Keto-Friendly,Per 100g,8.8,13.9,4.9,134.9,220.0
+Stuffed Bell Peppers,Asian,Keto-Friendly,Per 100g,12.4,22.7,11.6,244.8,220.0
+Kadhi Pakora,Middle Eastern,Vegan,Per 100g,8.8,43.9,3.6,243.2,180.0
+Stuffed Bell Peppers,Mediterranean,High-Protein,Per 100g,8.3,24.3,3.6,162.8,250.0
+Vegetable Biryani,American,Vegan,Per 100g,12.3,46.2,11.0,333.0,180.0
+Stuffed Tomatoes,Asian,Low-Calorie,Per 100g,7.3,19.0,3.9,140.3,150.0
+Kadhi Pakora,Italian,Vegan,Per 100g,15.0,29.5,5.0,223.0,180.0
+Quinoa Pulao,Italian,Gluten-Free,Per 100g,9.4,28.9,2.9,179.3,200.0
+Mushroom Risotto,Mexican,Gluten-Free,Per 100g,4.3,31.4,19.7,320.1,200.0
+Baingan Bharta,Asian,Vegan,Per 100g,14.1,8.8,2.7,115.9,180.0
+Eggplant Parmesan,Asian,High-Protein,Per 100g,12.4,36.1,15.3,331.7,250.0
+Vegetable Korma,Asian,Vegetarian,Per 100g,5.1,38.9,3.6,208.4,200.0
+Miso Soup,Mediterranean,Vegan,Per 100g,9.4,45.3,16.5,367.3,180.0
+Eggplant Parmesan,Mediterranean,Low-Calorie,Per 100g,12.6,42.4,2.7,244.3,150.0
+Soba Noodles,Mexican,Low-Calorie,Per 100g,10.7,49.5,6.7,301.1,150.0
+Greek Salad,Asian,Gluten-Free,Per 100g,10.0,26.9,3.5,179.1,200.0
+Sweet Potato Stew,Mexican,Vegan,Per 100g,2.2,42.9,11.2,281.2,180.0
+Dal Tadka,American,High-Protein,Per 100g,7.4,13.8,18.5,251.3,250.0
+Broccoli Casserole,Mexican,Gluten-Free,Per 100g,2.7,22.9,11.1,202.3,200.0
+Undhiyu,Asian,Vegan,Per 100g,2.4,41.0,7.4,240.2,180.0
+Lentil Soup,Asian,High-Protein,Per 100g,12.9,33.6,5.4,234.6,250.0
+Oats & Berries,Middle Eastern,Low-Calorie,Per 100g,14.2,8.2,15.9,232.7,150.0
+Dal Makhani,American,Vegan,Per 100g,11.6,19.0,4.0,158.4,180.0
+Spinach Dal,Italian,Vegetarian,Per 100g,5.2,34.6,6.5,217.7,200.0
+Chole Bhature,Indian,Low-Calorie,Per 100g,5.8,15.6,8.0,157.6,150.0
+Matar Paneer,Indian,High-Protein,Per 100g,9.0,21.2,12.6,234.2,250.0
+Coconut Rice,Mediterranean,High-Protein,Per 100g,10.1,5.2,17.4,217.8,250.0
+Dum Aloo,Mexican,Keto-Friendly,Per 100g,9.1,42.1,2.8,230.0,220.0
+Rajma Chawal,Indian,Low-Calorie,Per 100g,11.9,40.1,3.8,242.2,150.0
+Chickpea Salad,Indian,Keto-Friendly,Per 100g,10.9,19.7,1.3,134.1,220.0
+Thepla,Mediterranean,Vegetarian,Per 100g,7.9,34.5,18.9,339.7,200.0
+Thepla,American,Keto-Friendly,Per 100g,5.0,23.6,1.8,130.6,220.0
+Miso Soup,Mediterranean,Vegetarian,Per 100g,2.2,26.8,18.2,279.8,200.0
+Eggplant Parmesan,Italian,Gluten-Free,Per 100g,13.0,21.1,16.9,288.5,200.0
+Thepla,Indian,Vegetarian,Per 100g,3.9,28.5,8.2,203.4,200.0
+Rasam,American,Vegetarian,Per 100g,14.2,46.4,13.1,360.3,200.0
+Pav Bhaji,Indian,Gluten-Free,Per 100g,3.8,11.2,7.1,123.9,200.0
+Lentil Soup,Mediterranean,Gluten-Free,Per 100g,14.2,37.6,7.0,270.2,200.0
+Stuffed Tomatoes,Mediterranean,Vegetarian,Per 100g,12.5,42.1,13.9,343.5,200.0
+Besan Chilla,Mediterranean,Gluten-Free,Per 100g,3.1,9.4,2.6,73.4,200.0
+Dal Makhani,Mexican,Vegetarian,Per 100g,14.3,11.2,18.2,265.8,200.0
+Tofu Scramble,Asian,Vegetarian,Per 100g,6.6,44.5,18.5,370.9,200.0
+Dhokla,Indian,High-Protein,Per 100g,13.0,44.5,6.1,284.9,250.0
+Grilled Paneer Tikka,Indian,Vegetarian,Per 100g,3.7,47.5,14.8,338.0,200.0
+Pasta Primavera,Asian,High-Protein,Per 100g,14.6,23.8,7.4,220.2,250.0
+Mushroom Risotto,Italian,High-Protein,Per 100g,12.6,25.4,5.2,198.8,250.0
+Jackfruit Curry,Mediterranean,Gluten-Free,Per 100g,10.0,27.8,11.5,254.7,200.0
+Coconut Rice,Indian,Low-Calorie,Per 100g,4.7,39.3,3.1,203.9,150.0
+Zucchini Noodles,American,Vegan,Per 100g,5.3,8.4,9.1,136.7,180.0
+Stuffed Bell Peppers,Mediterranean,Vegetarian,Per 100g,9.6,15.3,15.8,241.8,200.0
+Dum Aloo,Middle Eastern,High-Protein,Per 100g,2.1,47.2,5.1,243.1,250.0
+Tofu Scramble,Indian,Keto-Friendly,Per 100g,12.9,12.0,9.5,185.1,220.0
+Sambar,Asian,Vegetarian,Per 100g,4.2,11.1,19.1,233.1,200.0
+Kale & Quinoa Salad,Italian,Keto-Friendly,Per 100g,10.3,5.3,11.2,163.2,220.0
+Chickpea Salad,Middle Eastern,Gluten-Free,Per 100g,4.2,41.8,5.6,234.4,200.0
+Soba Noodles,Middle Eastern,Vegetarian,Per 100g,8.3,36.2,2.8,203.2,200.0
+Palak Paneer,Indian,Keto-Friendly,Per 100g,3.6,30.8,8.2,211.4,220.0
+Zucchini Noodles,Mexican,High-Protein,Per 100g,6.2,35.2,7.7,234.9,250.0
+Pasta Primavera,American,Low-Calorie,Per 100g,9.5,7.4,9.6,154.0,150.0
+Dal Tadka,Middle Eastern,High-Protein,Per 100g,14.6,30.6,9.9,269.9,250.0
+Rajma Chawal,Middle Eastern,Keto-Friendly,Per 100g,7.7,36.8,2.9,204.1,220.0
+Chickpea Salad,Indian,Vegan,Per 100g,2.2,12.3,19.6,234.4,180.0
+Gobi Manchurian,Middle Eastern,Gluten-Free,Per 100g,6.7,21.3,15.9,255.1,200.0
+Chickpea Salad,Middle Eastern,Vegetarian,Per 100g,6.3,24.6,17.4,280.2,200.0
+Chole Bhature,Middle Eastern,High-Protein,Per 100g,7.5,30.6,11.5,255.9,250.0
+Dal Tadka,Middle Eastern,Keto-Friendly,Per 100g,2.3,28.6,17.1,277.5,220.0
+Hummus & Pita,Italian,Vegan,Per 100g,6.0,49.6,12.0,330.4,180.0
+Chole Bhature,Indian,Vegetarian,Per 100g,11.1,28.5,13.7,281.7,200.0
+Masoor Dal,Indian,Low-Calorie,Per 100g,4.5,48.7,11.2,313.6,150.0
+Sweet Potato Stew,Mediterranean,Vegetarian,Per 100g,12.8,44.9,4.3,269.5,200.0
+Pasta Primavera,Middle Eastern,Keto-Friendly,Per 100g,8.3,45.5,19.3,388.9,220.0
+Zucchini Noodles,Middle Eastern,Gluten-Free,Per 100g,4.6,18.0,11.8,196.6,200.0
+Avocado Toast,Indian,Vegan,Per 100g,12.0,25.8,3.0,178.2,180.0
+Grilled Paneer Tikka,Indian,Gluten-Free,Per 100g,11.5,48.1,5.1,284.3,200.0
+Shahi Paneer,Mediterranean,High-Protein,Per 100g,4.1,13.8,19.1,243.5,250.0
+Shahi Paneer,Italian,Vegetarian,Per 100g,12.9,40.5,3.7,246.9,200.0
+Methi Paratha,Indian,Low-Calorie,Per 100g,7.0,25.8,11.8,237.4,150.0
+Mushroom Risotto,Mediterranean,Vegetarian,Per 100g,9.2,8.2,3.0,96.6,200.0
+Spinach Dal,Middle Eastern,Keto-Friendly,Per 100g,11.6,20.1,8.1,199.7,220.0
+Uttapam,Mexican,Vegetarian,Per 100g,5.8,22.7,4.1,150.9,200.0
+Mushroom Risotto,Middle Eastern,High-Protein,Per 100g,4.1,21.0,7.7,169.7,250.0
+Tofu Scramble,Middle Eastern,High-Protein,Per 100g,10.2,30.8,17.2,318.8,250.0
+Chickpea Salad,Mediterranean,High-Protein,Per 100g,10.9,22.4,14.6,264.6,250.0
+Vegetable Biryani,American,Vegan,Per 100g,9.4,5.9,2.8,86.4,180.0
+Chickpea Salad,Italian,Keto-Friendly,Per 100g,10.9,45.8,18.4,392.4,220.0
+Bhindi Masala,Mediterranean,Vegetarian,Per 100g,9.7,5.2,3.3,89.3,200.0
+Rajma Chawal,Indian,High-Protein,Per 100g,4.2,18.4,10.3,183.1,250.0
+Vegetable Korma,American,Gluten-Free,Per 100g,5.8,37.6,6.5,232.1,200.0
+Methi Paratha,Italian,Vegan,Per 100g,9.3,13.4,8.4,166.4,180.0
+Tofu Scramble,Italian,Vegetarian,Per 100g,10.4,27.7,19.6,328.8,200.0
+Coconut Rice,Italian,Vegan,Per 100g,9.0,34.5,14.1,300.9,180.0
+Rasam,Middle Eastern,Vegan,Per 100g,5.0,44.0,12.8,311.2,180.0
+Besan Chilla,Mediterranean,Keto-Friendly,Per 100g,9.4,24.0,4.6,175.0,220.0
+Sambar,American,Low-Calorie,Per 100g,12.2,35.8,14.4,321.6,150.0
+Avocado Toast,Indian,Low-Calorie,Per 100g,2.8,11.4,1.9,73.9,150.0
+Bhindi Masala,Mexican,Low-Calorie,Per 100g,3.4,24.3,12.5,223.3,150.0
+Chickpea Salad,American,Gluten-Free,Per 100g,6.1,18.9,15.7,241.3,200.0
+Greek Salad,Italian,Vegan,Per 100g,8.8,39.0,11.8,297.4,180.0
+Avocado Toast,American,Vegetarian,Per 100g,11.8,16.3,12.3,223.1,200.0
+Jackfruit Curry,Middle Eastern,Vegan,Per 100g,11.0,24.7,5.8,195.0,180.0
+Dal Tadka,Middle Eastern,Keto-Friendly,Per 100g,5.4,38.8,19.7,354.1,220.0
+Quinoa Pulao,American,High-Protein,Per 100g,12.6,38.5,8.2,278.2,250.0
+Black Bean Tacos,Mediterranean,Gluten-Free,Per 100g,8.3,40.5,5.3,242.9,200.0
+Spinach Dal,Mediterranean,Keto-Friendly,Per 100g,12.2,13.9,15.5,243.9,220.0
+Soba Noodles,Italian,High-Protein,Per 100g,5.9,37.2,3.2,201.2,250.0
+Undhiyu,American,Low-Calorie,Per 100g,14.7,27.3,7.2,232.8,150.0
+Shahi Paneer,Asian,High-Protein,Per 100g,4.0,44.8,11.7,300.5,250.0
+Hummus & Pita,Indian,High-Protein,Per 100g,3.1,38.4,3.3,195.7,250.0
+Uttapam,Italian,Keto-Friendly,Per 100g,14.0,16.9,6.8,184.8,220.0
+Kale & Quinoa Salad,Asian,Low-Calorie,Per 100g,8.1,26.3,14.2,265.4,150.0
+Quinoa Pulao,Indian,Gluten-Free,Per 100g,8.0,44.7,15.9,353.9,200.0
+Besan Chilla,Mediterranean,High-Protein,Per 100g,8.2,43.0,15.4,343.4,250.0
+Coconut Rice,Mexican,Gluten-Free,Per 100g,4.2,35.8,16.2,305.8,200.0
+Jackfruit Curry,Middle Eastern,Gluten-Free,Per 100g,11.1,37.3,7.9,264.7,200.0
+Vegetable Korma,Indian,Vegetarian,Per 100g,11.4,16.9,19.0,284.2,200.0
+Mushroom Risotto,Indian,Vegetarian,Per 100g,10.7,41.0,8.9,286.9,200.0
+Pav Bhaji,Indian,Low-Calorie,Per 100g,5.8,34.1,13.0,276.6,150.0
+Kale & Quinoa Salad,Middle Eastern,Vegetarian,Per 100g,3.6,29.7,19.0,304.2,200.0
+Palak Paneer,Indian,Low-Calorie,Per 100g,2.5,5.4,14.9,165.7,150.0
+Tofu Scramble,Indian,Low-Calorie,Per 100g,4.1,41.6,17.0,335.8,150.0
+Thepla,American,Vegan,Per 100g,6.0,39.4,15.4,320.2,180.0
+Uttapam,Asian,Keto-Friendly,Per 100g,3.6,34.9,2.1,172.9,220.0
+Uttapam,Mexican,Gluten-Free,Per 100g,12.6,49.7,2.8,274.4,200.0
+Soba Noodles,Asian,High-Protein,Per 100g,3.5,12.1,2.7,86.7,250.0
+Bhindi Masala,Indian,Gluten-Free,Per 100g,13.4,48.7,16.5,396.9,200.0
+Hummus & Pita,Asian,Gluten-Free,Per 100g,5.5,20.8,8.2,179.0,200.0
+Jackfruit Curry,Mexican,Keto-Friendly,Per 100g,13.6,46.5,2.3,261.1,220.0
+Sweet Potato Stew,American,Gluten-Free,Per 100g,11.2,27.8,13.1,273.9,200.0
+Coconut Rice,Italian,Vegan,Per 100g,11.7,49.6,6.1,300.1,180.0
+Black Bean Tacos,Indian,Vegan,Per 100g,5.5,17.9,7.3,159.3,180.0
+Vegetable Sushi,Indian,Gluten-Free,Per 100g,3.5,9.1,15.5,189.9,200.0
+Vegetable Korma,Italian,High-Protein,Per 100g,5.2,48.4,17.2,369.2,250.0
+Besan Chilla,Italian,Vegetarian,Per 100g,6.2,40.3,10.6,281.4,200.0
+Dal Tadka,Indian,Gluten-Free,Per 100g,15.0,25.3,17.9,322.3,200.0
+Undhiyu,Indian,Keto-Friendly,Per 100g,12.9,20.4,2.6,156.6,220.0
+Pav Bhaji,Middle Eastern,Low-Calorie,Per 100g,13.7,30.5,1.4,189.4,150.0
+Stuffed Tomatoes,Middle Eastern,Keto-Friendly,Per 100g,12.0,29.5,3.8,200.2,220.0
+Grilled Paneer Tikka,Indian,Gluten-Free,Per 100g,11.6,44.2,6.0,277.2,200.0
+Rasam,Asian,Low-Calorie,Per 100g,7.4,47.3,17.5,376.3,150.0
+Broccoli Casserole,Asian,Vegan,Per 100g,13.7,42.0,16.3,369.5,180.0
+Hummus & Pita,Mexican,Low-Calorie,Per 100g,11.7,39.0,15.6,343.2,150.0
+Soba Noodles,Mexican,Gluten-Free,Per 100g,8.3,6.7,6.2,115.8,200.0
+Shahi Paneer,Italian,Vegetarian,Per 100g,10.3,12.2,1.6,104.4,200.0
+Dhokla,Indian,High-Protein,Per 100g,14.7,31.5,12.6,298.2,250.0
+Thepla,Middle Eastern,High-Protein,Per 100g,4.6,27.3,7.0,190.6,250.0
+Chole Bhature,Middle Eastern,Vegan,Per 100g,11.8,45.9,17.5,388.3,180.0
+Broccoli Casserole,Asian,Gluten-Free,Per 100g,10.9,15.4,15.8,247.4,200.0
+Stuffed Tomatoes,Mediterranean,Vegan,Per 100g,14.6,29.8,11.3,279.3,180.0
+Vegetable Biryani,Indian,High-Protein,Per 100g,14.0,23.6,14.2,278.2,250.0
+Oats & Berries,Asian,Low-Calorie,Per 100g,2.9,36.2,14.0,282.4,150.0
+Vegetable Biryani,American,Keto-Friendly,Per 100g,11.8,37.9,6.4,256.4,220.0
+Oats & Berries,Mediterranean,Vegan,Per 100g,11.8,38.6,3.2,230.4,180.0
+Dum Aloo,Mexican,Gluten-Free,Per 100g,13.4,34.1,7.7,259.3,200.0
+Avocado Toast,Mexican,Vegetarian,Per 100g,2.6,22.7,9.2,184.0,200.0
+Stuffed Tomatoes,Asian,Vegetarian,Per 100g,6.9,40.8,6.0,244.8,200.0
+Vegetable Korma,Italian,Vegetarian,Per 100g,11.4,6.1,15.1,205.9,200.0
+Hummus & Pita,Mexican,Vegetarian,Per 100g,8.7,27.9,14.8,279.6,200.0
+Soba Noodles,American,Vegan,Per 100g,3.7,37.6,10.1,256.1,180.0
+Jackfruit Curry,Asian,Low-Calorie,Per 100g,10.7,39.8,2.7,226.3,150.0
+Baingan Bharta,American,High-Protein,Per 100g,4.5,25.4,18.6,287.0,250.0
+Besan Chilla,Asian,Vegan,Per 100g,3.4,9.3,3.7,84.1,180.0
+Zucchini Noodles,Mediterranean,Vegetarian,Per 100g,11.5,11.3,9.0,172.2,200.0
+Besan Chilla,American,Keto-Friendly,Per 100g,3.0,7.6,15.1,178.3,220.0
+Palak Paneer,Asian,Gluten-Free,Per 100g,12.9,40.2,1.6,226.8,200.0
+Poha,Mexican,Keto-Friendly,Per 100g,2.8,38.3,9.9,253.5,220.0
+Avocado Toast,American,High-Protein,Per 100g,9.7,38.4,7.4,259.0,250.0
+Broccoli Casserole,Asian,High-Protein,Per 100g,10.4,26.9,11.7,254.5,250.0
+Stuffed Bell Peppers,Italian,High-Protein,Per 100g,9.4,25.7,19.7,317.7,250.0
+Zucchini Noodles,Italian,Gluten-Free,Per 100g,6.4,17.9,4.6,138.6,200.0
+Pav Bhaji,Mexican,Vegan,Per 100g,5.6,48.3,16.0,359.6,180.0
+Besan Chilla,Middle Eastern,Vegetarian,Per 100g,14.2,29.1,17.3,328.9,200.0
+Black Bean Tacos,Italian,Vegan,Per 100g,12.5,46.0,13.8,358.2,180.0
+Kale & Quinoa Salad,Middle Eastern,High-Protein,Per 100g,10.2,34.3,12.9,294.1,250.0
+Pasta Primavera,Mediterranean,Vegetarian,Per 100g,10.6,29.3,7.8,229.8,200.0
+Stuffed Tomatoes,American,Low-Calorie,Per 100g,7.0,13.1,13.0,197.4,150.0
+Vegetable Stir Fry,Middle Eastern,Low-Calorie,Per 100g,13.5,7.1,17.3,238.1,150.0
+Matar Paneer,American,Gluten-Free,Per 100g,14.8,11.8,14.7,238.7,200.0
+Chickpea Salad,Middle Eastern,Low-Calorie,Per 100g,10.4,44.3,5.0,263.8,150.0
+Mushroom Risotto,Indian,Low-Calorie,Per 100g,13.2,20.0,11.6,237.2,150.0
